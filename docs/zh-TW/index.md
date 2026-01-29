@@ -12,11 +12,11 @@ hide:
 
 /// html | div.column.main
 
-Do your maps look like everyone else’s? Are you paying high fees just to include maps on your website?
+你的地圖看起來與其他人一樣嗎？你需要付高額費用才能在你的網站內嵌地圖嗎？
 
-Switch to OpenStreetMap and discover how you can build beautiful maps from the world’s best map data.
+轉換使用開放街圖，並且探索如何用全世界最棒的地圖資料來繪製美麗的地圖。
 
-[Using Tiles](/using-tiles/index.md){ .md-button .md-button--primary } [Serving Tiles](/serving-tiles/index.md){ .md-button }
+[使用圖磚](/using-tiles/index.md){ .md-button .md-button--primary } [Serving Tiles](/serving-tiles/index.md){ .md-button }
 
 ///
 
@@ -34,11 +34,11 @@ Switch to OpenStreetMap and discover how you can build beautiful maps from the w
 
 /// html | div.column.main
 
-We give you the data for free; you can make any map you like with it. Or benefit from the expertise of those already using OpenStreetMap.
+我們免費給你資料，你可以用這些資料製作出任何地圖。或是從已經用開放街圖的人學習其經驗。
 
-Host it on your hardware, or elsewhere. You have control.
+在你的硬體架設，或是其他地方，你有完全的掌控。
 
-[Switch2OSM](#) explains how to make the switch – from first principles to technical how‑tos.
+[Switch2OSM](#) 解釋如何轉換 – 從基本概念到技術指導。
 ///
 
 ////
@@ -51,12 +51,12 @@ Host it on your hardware, or elsewhere. You have control.
 
 /// html | div.column.main
 
-## What people say about OpenStreetMap
+## 人們怎麼說開放街圖
 
-&laquo;Much like Wikipedia challenged Encyclopedia Britannica and Linux took on Microsoft Windows, OpenStreetMap is battling Google Maps, and at least in some cases, it’s winning.&raquo;<br />
-*Read what Wired has to say about [people switching to OpenStreetMap](http://www.wired.com/wiredenterprise/2012/01/openstreetmap-google/){: target=_blank}.*{: class="quote"}
+&laquo;就如同維基百科挑戰大英百科全書，以及 Linux 挑戰微軟 Windows，開放街圖對抗 Google 地圖，或者在一些例子當中，其實已經贏了。&raquo;<br />
+*閱讀連線雜誌怎麼說[切換使用開放街圖的人們](http://www.wired.com/wiredenterprise/2012/01/openstreetmap-google/){: target=_blank}.*{: class="quote"}
 
-&laquo;OpenStreetMap is all about people doing their bit, creating an incredible resource for everybody else.&raquo;<br />
-*Tim Berners-Lee, creator of the web, explains [OSM at TED 2009](https://www.ted.com/talks/tim_berners_lee_the_next_web/transcript){: target=_blank}.*{: class="quote"}
+&laquo;開放街圖是關於人們所做的一切，製作出任何人能使用的資源。&raquo;<br />
+*網際網路發明人 Tim Berners-Lee，在 [TED 2009 介紹 OSM](https://www.ted.com/talks/tim_berners_lee_the_next_web/transcript){: target=_blank}.*{: class="quote"}
 ///
 ////
