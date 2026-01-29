@@ -16,18 +16,18 @@ lang: zh-TW
 
 ## Geocoding 服務
 
-* [Gisgraphy](https://www.gisgraphy.com){: target=_blank} is an open source geocoder that provides API / webservices for forward and reverse geocoding with auto-completion, interpolation, location Bias, find nearby, all can be run offline or as hosted solutions. It provide some importers for Openstreetmap but also Openadresses, Geonames, and more.
-* [Nominatim](https://nominatim.org){: target=_blank} is the software behind OpenStreetMap’s geocoding service (placename ↔ lat/long).
-* [OpenCage](https://opencagedata.com/){: target=_blank} provides a geocoding API aggregating Nominatim and other open sources.
-* [OSMNames](https://osmnames.org/){: target=_blank} - place names from OpenStreetMap. Downloadable. Ranked. With bbox and hierarchy. Ready for geocoding.
+* [Gisgraphy](https://www.gisgraphy.com){: target=_blank} 是開源的 geocoder，為正向與反向地理編碼提供 API / 網站服務，並且有自動完成、內插、地理偏差、尋找附近功能，都能以離線或是自行架設。這套件提供開放街圖匯入器，但也提供 Openadresses、Geonames 等服務。
+* [Nominatim](https://nominatim.org){: target=_blank} 是開放街圖背後的 geocoding 服務 (placename ↔ lat/long)。
+* [OpenCage](https://opencagedata.com/){: target=_blank} 整合進 Nominatim 以及其他開源方案提供 geocoding API。
+* [OSMNames](https://osmnames.org/){: target=_blank} - 開放街圖上的地名，可以下載，排序，以及在邊界範圍以及階層式，當然可以用來 geocoding。
 
 ## 導航引擎與服務
 
-* [OSRM](http://project-osrm.org/){: target=_blank} is a fast routing engine designed for OSM data.
-* [Graphhopper](https://github.com/graphhopper/graphhopper/){: target=_blank} is a fast Java routing engine with a small memory footprint.
-* [Valhalla](https://valhalla.readthedocs.io/en/latest/){: target=_blank} is a C++ routing engine for road vehicles and public transport.
-* Public routing APIs using OSM data are offered by [GraphHopper](https://www.graphhopper.com/products/){: target=_blank}, [MapQuest Open](http://open.mapquestapi.com/directions/){: target=_blank} and [Mapbox](https://www.mapbox.com/directions/){: target=_blank}.
-* Specialist routing APIs include [CycleStreets cycle routing](https://www.cyclestreets.net/api/){: target=_blank} (UK and beyond)
+* [OSRM](http://project-osrm.org/){: target=_blank} 是為了 OSM 資料設計的快速導航引擎。
+* [Graphhopper](https://github.com/graphhopper/graphhopper/){: target=_blank} 是具有相當小記憶體用量，運作快速的 Java 導航引擎。
+* [Valhalla](https://valhalla.readthedocs.io/en/latest/){: target=_blank} 是為了車輛與大眾運輸導航的 C++ 導航引擎。
+* 使用 OSM 資料的公共導航 API 由 [GraphHopper](https://www.graphhopper.com/products/){: target=_blank}、[MapQuest Open](http://open.mapquestapi.com/directions/){: target=_blank} 以及 [Mapbox](https://www.mapbox.com/directions/){: target=_blank} 提供。
+* 特定用途導航 API 包括 [CycleStreets cycle routing](https://www.cyclestreets.net/api/){: target=_blank} (英國以及其他)
 
 ## 向量地圖函式庫 (手機)
 
