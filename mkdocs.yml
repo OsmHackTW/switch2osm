@@ -98,10 +98,12 @@ nav:
       - using-tiles/index.md
       - Leaflet: using-tiles/getting-started-with-leaflet.md
       - OpenLayers: using-tiles/getting-started-with-openlayers.md
+      - MapLibre: using-tiles/getting-started-with-maplibre.md
   - Serving:
       # - Serving tiles: serving-tiles/index.md
       - serving-tiles/index.md
       - Manually:
+          - Debian 13: serving-tiles/manually-building-a-tile-server-debian-13.md
           - Debian 12: serving-tiles/manually-building-a-tile-server-debian-12.md
           - Debian 11: serving-tiles/manually-building-a-tile-server-debian-11.md
           - Ubuntu 24.04: serving-tiles/manually-building-a-tile-server-ubuntu-24-04-lts.md
@@ -164,6 +166,8 @@ plugins:
             # Menu item name for the side menu
             OpenLayers: Getting started with OpenLayers
             # Menu item name for the side menu
+            MapLibre: Getting started with MapLibre GL
+            # Menu item name for the side menu
             Vector Tiles: Power of Vector Map Tiles
             # Menu item name for the "Serving Tiles" tab
             Serving: Serving Tiles
@@ -200,12 +204,16 @@ plugins:
             Using: Мапа
             Leaflet: За допомогою Leaflet
             OpenLayers: За допомогою OpenLayers
+            MapLibre: Початок роботи з MapLibre GL
             Vector Tiles: Переваги векторних тайлів
             Serving: Власний сервер
             Manually: Розгортаємо сервер вручну
             Docker: Використання контейнера Docker
             Munin: Моніторинг за допомогою Munin
             Updating: Оновлення бази даних правками з OpenStreetMap
+            Serving vector tiles: Векторні тайли
+            Steps: Загальні кроки
+            TileServer GL: Розгортання TileServer GL
             Other: Інше
             Providers: Постачальники
             More: Отримання допомоги
@@ -234,6 +242,9 @@ plugins:
             Docker: 使用 Docker 容器
             Munin: 採用 Munin 監控
             Updating: 在人們編輯過開放街圖之後更新資料庫
+            Serving vector tiles: 向量地圖圖磚
+            Steps: 一般步驟
+            TileServer GL: 開始使用 TileServer GL
             Other: 其他用途
             Providers: 提供者
             More: 取得協助
