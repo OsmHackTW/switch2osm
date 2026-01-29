@@ -14,12 +14,12 @@ lang: zh-TW
 
 ## StreetEasy.com
 
-> 「We at StreetEasy decided to build our own maps using, among other tools, OpenStreetMap, TileMill, MapBox and Leaflet, instead of paying hundreds of thousands of dollars per year to Google. And yes, the money pushed us into doing it, but we’re happier with the result because we now control the contents of our maps.」
+> 「我們 StreetEasy 的人決定用自己的工具製作自己的地圖，使用來自開放街圖的資料，以及 TileMill、MapBox 與 Leaflet 等工具，而非每年付出成千上萬的費用給 Google。的確，我們是因為經費壓力而打算這麼做的，但我們看到結果反倒更開心，能直接控制地圖的內容。」
 
-Read [StreetEasy’s story of switching from Google Maps to OpenStreetMap](https://medium.com/devseed/streeteasy-makes-the-switch-to-mapbox-from-google-3784c10a041f){: target=blank}.
+閱讀 [StreetEasy 從 Google 地圖轉換為開放街圖的故事](https://medium.com/devseed/streeteasy-makes-the-switch-to-mapbox-from-google-3784c10a041f){: target=blank}.
 
 ## Flickr
 
-> “A fantastic project called OpenStreetMap – a free, editable map of the world, made by the people in it. What an exciting prospect to be able to see maps that are alive and have been lovingly created by citizen cartographers all over the world. What an even more exciting prospect to be able to display those maps in Flickr! We racked our brains for a place that we knew we didn’t have a very good street-level resolution for, and had something going on there right now… The 2008 Summer Olympic Games! They just kicked off in Beijing!”
+> 「有個相當讚的專案叫開放街圖 – 免費，可以編輯的世界地圖，由參與人們製作。有什麼樣的有趣專案能看到地圖有生機，並且由全世界的公民製圖家製作。而有什麼比在 Flickr 上顯示這份地圖更興奮的事情呢！我們絞盡腦汁想出沒有很好街景覆蓋的地方，而現在該地正有大事件發生－那就是 2008 年夏季奧運會，正在北京進行！」
 
 閱讀 [Flickr 轉換到開放街圖的理由(http://blog.flickr.net/en/2008/08/12/around-the-world-and-back-again{: target=blank}。
