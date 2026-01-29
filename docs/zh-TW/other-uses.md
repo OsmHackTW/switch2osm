@@ -6,13 +6,13 @@ lang: zh-TW
 
 # {{ title }}
 
-We’ve focused on tiles, but since OpenStreetMap – uniquely – gives you access to the raw map data, you can build any location or geo- application. These are the most common starting points; a full listing is available [at the OpenStreetMap Wiki](http://wiki.openstreetmap.org/wiki/Frameworks){: target=_blank}.
+我們專注在圖磚上，但自從開放街圖 – 特別是 – 直接能取得原始資料，你可以打造任何位置或是地理應用程式。這裡有最一開始的發掘起點；[在 OpenStreetMap Wiki](http://wiki.openstreetmap.org/wiki/Frameworks){: target=_blank} 上有完整的資源。
 
 ## 常見工具
 
-* [Osmosis](http://wiki.openstreetmap.org/wiki/Osmosis){: target=_blank} is an all-purpose Java application for loading OSM data into a database. Most applications of OSM data use Osmosis in some way.
-* [Osmium](http://wiki.openstreetmap.org/wiki/Osmium){: target=_blank} is a flexible framework, rapidly gaining popularity, which offers a highly configurable alternative to Osmosis.
-* [Mapbox Studio](https://www.mapbox.com/mapbox-studio/){: target=_blank} is a suite of tools to produce ‘vector tiles’ which can be rendered either server-side or client-side.
+* [Osmosis](http://wiki.openstreetmap.org/wiki/Osmosis){: target=_blank} 是全方位的載入 OSM 資料到資料庫的 Java 應用程式，大多數使用 OSM 資料的應用程式都有一定程度使用 Osmosis 的情境。
+* [Osmium](http://wiki.openstreetmap.org/wiki/Osmium){: target=_blank} 是具有彈性的架構，很快變得受歡迎，相比 Osmosi 提供高度客製化的選項。
+* [Mapbox Studio](https://www.mapbox.com/mapbox-studio/){: target=_blank} 是一整套製作'向量圖磚'的工具，能夠在伺服器端或是客戶端渲染圖資。
 
 ## Geocoding 服務
 
@@ -35,6 +35,6 @@ We’ve focused on tiles, but since OpenStreetMap – uniquely – gives you acc
 
 * iOS libraries include the [MapLibre iOS SDK](https://maplibre.org/projects/maplibre-native/){: target=_blank}, [Mapbox iOS SDK](https://www.mapbox.com/ios-sdk/){: target=_blank}, [Nutiteq Maps SDK](https://developer.nutiteq.com/){: target=_blank}, [Skobbler iOS SDK](http://developer.skobbler.com/){: target=_blank}, and [Tangram ES](https://github.com/tangrams/tangram-es/){: target=_blank}.
 
-## Vector map libraries (Web)
+## 向量地圖函式庫 (網路)
 
-* [MapLibre GL JS](https://maplibre.org/projects/maplibre-gl-js/){: target=_blank}, [Mapbox GL JS](https://www.mapbox.com/mapbox-gl-js/){: target=_blank} and [Tangram](http://tangrams.github.io/tangram/){: target=_blank} render vector tiles based on OSM data using WebGL for better performance.
+* [MapLibre GL JS](https://maplibre.org/projects/maplibre-gl-js/){: target=_blank}，[Mapbox GL JS](https://www.mapbox.com/mapbox-gl-js/){: target=_blank} 以及 [Tangram](http://tangrams.github.io/tangram/){: target=_blank} 依據 OSm渲染向量圖磚render vector tiles based on OSM data using WebGL for better performance.
