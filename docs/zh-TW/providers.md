@@ -15,7 +15,7 @@ lang: zh-TW
 * [Carto](https://carto.com/){: target=_blank}，美國
 * [Champs-Libres](https://www.champs-libres.coop/){: target=_blank}，比利時
 * [Geoapify](https://www.geoapify.com/){: target=_blank}，德國
-* [Geofabrik](https://www.geofabrik.de/){: target=_blank}，德國y
+* [Geofabrik](https://www.geofabrik.de/){: target=_blank}，德國
 * [Geokeo](https://www.geokeo.com/){: target=_blank}，印度
 * [GeoJunxion](https://www.geojunxion.com/){: target=_blank} (先前是 AND)，荷蘭
 * [GreenInfo Network](https://www.greeninfo.org/){: target=_blank}，美國 (只服務公益團體)
