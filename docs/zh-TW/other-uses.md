@@ -27,14 +27,14 @@ lang: zh-TW
 * [Graphhopper](https://github.com/graphhopper/graphhopper/){: target=_blank} 是具有相當小記憶體用量，運作快速的 Java 導航引擎。
 * [Valhalla](https://valhalla.readthedocs.io/en/latest/){: target=_blank} 是為了車輛與大眾運輸導航的 C++ 導航引擎。
 * 使用 OSM 資料的公共導航 API 由 [GraphHopper](https://www.graphhopper.com/products/){: target=_blank}、[MapQuest Open](http://open.mapquestapi.com/directions/){: target=_blank} 以及 [Mapbox](https://www.mapbox.com/directions/){: target=_blank} 提供。
-* 特定用途導航 API 包括 [CycleStreets cycle routing](https://www.cyclestreets.net/api/){: target=_blank} (英國以及其他)
+* 特定用途導航 API 包括 [CycleStreets cycle routing](https://www.cyclestreets.net/api/){: target=_blank} (英國以及其他地區)
 
 ## 向量地圖函式庫 (手機)
 
-* Android libraries include the [MapLibre Android SDK](https://maplibre.org/projects/maplibre-native/){: target=_blank}, [Mapbox Android SDK](https://www.mapbox.com/android-sdk/){: target=_blank}, [mapsforge](http://mapsforge.org/){: target=_blank}, [Nutiteq Maps SDK](https://developer.nutiteq.com/){: target=_blank}, [Skobbler Android SDK](http://developer.skobbler.com/){: target=_blank}, and [Tangram ES](https://github.com/tangrams/tangram-es/){: target=_blank}.
+* Android 的函式庫包括 [MapLibre Android SDK](https://maplibre.org/projects/maplibre-native/){: target=_blank}、[Mapbox Android SDK](https://www.mapbox.com/android-sdk/){: target=_blank}、[mapsforge](http://mapsforge.org/){: target=_blank}、[Nutiteq Maps SDK](https://developer.nutiteq.com/){: target=_blank}, [Skobbler Android SDK](http://developer.skobbler.com/){: target=_blank} 以及 [Tangram ES](https://github.com/tangrams/tangram-es/){: target=_blank}。
 
-* iOS libraries include the [MapLibre iOS SDK](https://maplibre.org/projects/maplibre-native/){: target=_blank}, [Mapbox iOS SDK](https://www.mapbox.com/ios-sdk/){: target=_blank}, [Nutiteq Maps SDK](https://developer.nutiteq.com/){: target=_blank}, [Skobbler iOS SDK](http://developer.skobbler.com/){: target=_blank}, and [Tangram ES](https://github.com/tangrams/tangram-es/){: target=_blank}.
+* iOS 函式庫包括 [MapLibre iOS SDK](https://maplibre.org/projects/maplibre-native/){: target=_blank}、[Mapbox iOS SDK](https://www.mapbox.com/ios-sdk/){: target=_blank}、[Nutiteq Maps SDK](https://developer.nutiteq.com/){: target=_blank}、[Skobbler iOS SDK](http://developer.skobbler.com/){: target=_blank} 以及 [Tangram ES](https://github.com/tangrams/tangram-es/){: target=_blank}。
 
 ## 向量地圖函式庫 (網路)
 
-* [MapLibre GL JS](https://maplibre.org/projects/maplibre-gl-js/){: target=_blank}，[Mapbox GL JS](https://www.mapbox.com/mapbox-gl-js/){: target=_blank} 以及 [Tangram](http://tangrams.github.io/tangram/){: target=_blank} 依據 OSm渲染向量圖磚render vector tiles based on OSM data using WebGL for better performance.
+* [MapLibre GL JS](https://maplibre.org/projects/maplibre-gl-js/){: target=_blank}、[Mapbox GL JS](https://www.mapbox.com/mapbox-gl-js/){: target=_blank} 以及 [Tangram](http://tangrams.github.io/tangram/){: target=_blank} 依據 OSM 渲染向量圖磚使用 WebGL 取得更好的效能。
