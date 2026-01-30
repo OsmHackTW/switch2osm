@@ -8,31 +8,31 @@ lang: zh-TW
 
 ## 開發服務與諮詢
 
-The following companies offer development services and consulting for sites wishing to switch to OpenStreetMap.
+以下的公司為想要轉換使用開放街圖資料的人提供開發服務以及諮詢業務。
 
-* [Alantgeo](https://www.alantgeo.com.au){: target=_blank}, Australia
-* [Camptocamp](https://camptocamp.com/){: target=_blank}, Switzerland
-* [Carto](https://carto.com/){: target=_blank}, US
-* [Champs-Libres](https://www.champs-libres.coop/){: target=_blank}, Belgium
-* [Geoapify](https://www.geoapify.com/){: target=_blank}, Germany
-* [Geofabrik](https://www.geofabrik.de/){: target=_blank}, Germany
-* [Geokeo](https://www.geokeo.com/){: target=_blank}, India
-* [GeoJunxion](https://www.geojunxion.com/){: target=_blank} (formerly AND), Netherlands
-* [GreenInfo Network](https://www.greeninfo.org/){: target=_blank}, US (public interest groups only)
-* [Jawg](https://www.jawg.io/){: target=_blank}, France
-* [Makina Corpus](https://makina-corpus.com/){: target=_blank}, France
-* [Mapbox](https://www.mapbox.com/){: target=_blank}, US
-* [MapTiler](https://www.maptiler.com/){: target=_blank}, Switzerland
-* [Maptoolkit](https://www.maptoolkit.com/){: target=_blank}, Germany/Austria
-* [mapz.com by Kober-Kümmerly+Frey](https://www.mapz.com/){: target=_blank}, Germany
-* [SmartMaps by YellowMap](https://www.smartmaps.net/en/){: target=_blank}, Germany
-* [Stadia Maps](https://stadiamaps.com){: target=_blank}, US
-* [Stamen](https://www.stamen.com/){: target=_blank}, US
-* [Système D](https://www.systemeD.net/openstreetmap/ "OpenStreetMap consultancy by Richard Fairhurst"){: target=_blank}, UK
+* [Alantgeo](https://www.alantgeo.com.au){: target=_blank}，澳洲
+* [Camptocamp](https://camptocamp.com/){: target=_blank}，瑞士
+* [Carto](https://carto.com/){: target=_blank}，美國
+* [Champs-Libres](https://www.champs-libres.coop/){: target=_blank}，比利時
+* [Geoapify](https://www.geoapify.com/){: target=_blank}，德國
+* [Geofabrik](https://www.geofabrik.de/){: target=_blank}，德國y
+* [Geokeo](https://www.geokeo.com/){: target=_blank}，印度
+* [GeoJunxion](https://www.geojunxion.com/){: target=_blank} (先前是 AND)，荷蘭
+* [GreenInfo Network](https://www.greeninfo.org/){: target=_blank}，美國 (只服務公益團體)
+* [Jawg](https://www.jawg.io/){: target=_blank}，法國
+* [Makina Corpus](https://makina-corpus.com/){: target=_blank}，法國
+* [Mapbox](https://www.mapbox.com/){: target=_blank}，美國
+* [MapTiler](https://www.maptiler.com/){: target=_blank}，瑞士
+* [Maptoolkit](https://www.maptoolkit.com/){: target=_blank}，德國/奧地利
+* [mapz.com by Kober-Kümmerly+Frey](https://www.mapz.com/){: target=_blank}，德國
+* [SmartMaps by YellowMap](https://www.smartmaps.net/en/){: target=_blank}，德國
+* [Stadia Maps](https://stadiamaps.com){: target=_blank}，美國
+* [Stamen](https://www.stamen.com/){: target=_blank}，美國
+* [Système D](https://www.systemeD.net/openstreetmap/ "OpenStreetMap consultancy by Richard Fairhurst"){: target=_blank}，英國
 
 ## 圖傳提供
 
-The following companies host OpenStreetMap tiles.
+以下公司供應圖磚。
 
 ### 允許免費使用
 
@@ -51,9 +51,9 @@ The following companies host OpenStreetMap tiles.
 * [Tracestrack](https://www.tracestrack.com){: target=_blank}，荷蘭
 * [Esri](https://www.esri.com){: target=_blank}，美國
 
-### Paid customers only
+### 只服務付費客戶
 
-* [Champs-Libres](https://www.champs-libres.coop/){: target=_blank}, Belgium
-* [Geofabrik](https://www.geofabrik.de/maps/rendering.html){: target=_blank}, Germany
-* [Makina Corpus](https://makina-corpus.com/){: target=_blank}, France
-* [mapz.com by Kober-Kümmerly+Frey](https://www.mapz.com/){: target=_blank}, Germany
+* [Champs-Libres](https://www.champs-libres.coop/){: target=_blank}，比利時
+* [Geofabrik](https://www.geofabrik.de/maps/rendering.html){: target=_blank}，德國
+* [Makina Corpus](https://makina-corpus.com/){: target=_blank}，法國
+* [mapz.com by Kober-Kümmerly+Frey](https://www.mapz.com/){: target=_blank}，德國
