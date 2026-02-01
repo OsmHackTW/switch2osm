@@ -32,27 +32,27 @@ OSM 地圖資料庫被稱為 planet.osm，整個完整資料庫與定期更新�
 
 ### 點陣圖磚或是向量圖磚
 
-Raster tiles and vector tiles are two distinct approaches to representing and serving map data. Each has its own advantages and use cases. Let's explore the differences between raster tiles and vector tiles to understand their strengths and limitations.
+點陣圖磚與向量圖磚為兩種提供地圖資料的方式，在不同的情境有不同的優勢。讓我們探索點陣圖磚與向量圖磚的差別，瞭解兩種方案的強項與限制。
 
 **點陣圖磚**
 
-Raster tiles are essentially images or pictures of map data. They are pre-rendered at various zoom levels and stored as discrete image files. Here are some key characteristics of raster tiles:
+點陣圖磚基本上是地圖資料的影像，採用事先渲染方式產生不同縮放層級離散的影像檔案，以下為點陣圖磚的一些重點特性：
 
-* Raster tiles represent map data as a grid of pixels. Each tile is a static image that depicts a portion of the map at a specific zoom level.
-* Raster tiles have a fixed appearance as they are generated with predefined styles. To change the map's visual representation, new tiles need to be rendered, which can be computationally intensive.
-* Raster tiles can have larger file sizes compared to vector tiles because they store pixel-level details for each tile, resulting in higher storage requirements and slower download times.
-* Raster tiles are well-suited for displaying complex cartographic styles, such as topographic maps or satellite imagery, where fine details are important.
-* Raster tiles offer limited interactivity options, primarily limited to basic zooming and panning. Interacting with individual map features or dynamically modifying the map's appearance is challenging.
+* 點陣圖磚代表地圖資料的網格像素，每個圖磚代表地圖在特定縮放層級的靜態影像。
+* 點陣圖磚依據事先約定的樣式一旦產生有固定的外觀，要改變地圖的視覺再現，需要重新用程式渲染產生新圖磚。
+* 點陣圖磚相比向量圖磚有更大的檔案大小，因為每個點陣圖磚儲存像素等級的細節，導致需要更大的儲存空間，以及比較慢的下載時間。
+* 點陣圖磚相當適合顯示複雜的製圖樣式，例如等高線地圖或是衛星影像，任何細節都很重要。
+* 點陣圖磚不大能提供太多互動選項，主要是基本縮放與拖拉都有限制。要與個別地圖圖徵互動或是動態改變地圖外觀是項挑戰。
 
 **向量圖磚**
 
-Vector tiles, on the other hand, represent map data as a collection of geometric features, such as points, lines, and polygons. Here are the distinguishing features of vector tiles:
+向量圖磚，另一方面，則代表幾何圖徵的地圖資料集合，例如點、線或是多邊形。以下為向量圖磚代表的顯著圖徵：
 
-* Vector tiles store map data as individual geometries and attributes. These geometries can be scaled, rotated, and restyled in real-time, providing more flexibility and customization options.
-* Vector tiles allow for dynamic styling and modification of map features. Styles can be changed on the fly, including colors, line widths, label placements, and other visual properties.
-* Vector tiles are generally smaller compared to raster tiles. Since they store only geometric data and attributes, they require less storage space and result in faster transfer times.
-* Vector tiles require less bandwidth for transfer, since only the necessary map data is sent to the client. This is particularly advantageous for mobile applications or areas with limited internet connectivity.
-* Vector tiles enable rich interactivity and real-time rendering. Users can interact with individual map features, perform dynamic queries, and apply custom styles based on attributes, offering a more interactive and personalized map experience.
+* 向量圖磚以個別幾何與屬性儲存地圖資料，這些幾何圖形能即時被縮放、旋轉與重新套用樣式，能提供更為彈性與客製化選項。
+* 向量圖磚允許動態樣式與地圖圖徵變動。樣式能即時變動，包括顏色、線條寬度、標籤取代，以及其他視覺屬性。
+* 向量圖磚通常比點陣圖磚小，因為向量圖磚只會儲存幾何資料與屬性，因此只需較小的儲存空間，傳輸也比較快。
+* 向量圖磚傳輸時不需要太大的頻寬，因為只需要傳輸必要的地圖資料到客戶端。這給予行動裝置或是網路連線有限的地方所需的優勢。
+* 向量圖磚允許豐富的互動功能以及即時渲染功能。使用者能與個別地圖圖徵互動，進行動態檢索，以及依據屬性套用客製化樣式，提供更為互動與個人化的地圖體驗。
 
 ### 使用案例
 
