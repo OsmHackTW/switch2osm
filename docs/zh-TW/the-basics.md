@@ -28,7 +28,7 @@ lang: zh-TW
 
 OSM 地圖資料庫被稱為 planet.osm，整個完整資料庫與定期更新檔案都可以在 [planet.openstreetmap.org](http://planet.openstreetmap.org/){: target=blank} 取得。
 
-Rendering your own tiles gives you complete control over their appearance. You can customise the maps to appear any way you like. Alternatively, third-party suppliers have OSM expertise and may have ready-prepared map styles that you can use.
+渲染您自己的圖磚能給與您自己完全的外觀顯示控制，您可以客製化地圖顯示為您喜愛的方式。相反的，第三方供應商則以他們的 OSM 領域專長，已經有現成的地圖樣式。
 
 ### 點陣圖磚或是向量圖磚
 
@@ -74,20 +74,20 @@ Both raster tiles and vector tiles have their merits depending on the use case. 
 
 ## API/函式庫
 
-There is no single canonical library: you can choose whichever suits your needs best. The two most popular JavaScript libraries for displaying OSM tiles are:
+並且沒有單一包含全部功能的函式庫：您可以選擇任何適合您目的的品項，以下為兩樣最受歡迎用來顯示 OSM 圖磚的 JavaScript 函式庫：
 
 * OpenLayers – 強大而且歷史悠久
 
 * Leaflet – 輕量而且簡單易學
 
-APIs are also available for mobile platforms, such as [Route-Me](https://github.com/route-me/route-me){: target=blank} (iOS) and [osmdroid](https://github.com/osmdroid/osmdroid){: target=blank} (Android).
+行動平台也有 API 能使用，例如 [Route-Me](https://github.com/route-me/route-me){: target=blank} (iOS) 以及 [osmdroid](https://github.com/osmdroid/osmdroid){: target=blank} (Android)。
 
 ## 授權條款
 
-Unlike commercial providers’ data, OpenStreetMap is ‘open data’. The map data is available to you free-of-charge, with the freedom to copy and modify. OSM’s licence is the [Open Database Licence](http://opendatacommons.org/licenses/odbl/summary/){: target=blank}.
+不像商業地圖供應商，開放街圖屬於‘開放資料’，您能夠免費取得地圖資料，自行複製與變動的自由。OSM 授權條款以[開放資料庫授權條款](http://opendatacommons.org/licenses/odbl/summary/){: target=blank}釋出。
 
 您必須遵循的義務為：
 
-* 署名。You must credit OpenStreetMap with the same prominence that would be expected if you were using a commercial provider. See [OSM’s copyright guidelines](http://www.openstreetmap.org/copyright){: target=blank}.
+* 署名。您必須用同樣使用商業地圖的顯著署名方式署名開放街圖，參見 [OSM 著作權指南](http://www.openstreetmap.org/copyright){: target=blank}。
 
-* 相同方式分享。When you use any adapted version of OSM’s map data, or works produced with it, you must also offer that adapted database under the ODbL.
+* 相同方式分享。當您使用任何衍生編輯的 OSM 地圖資料，或是任何產製的產品，您必須將改衍生編輯的資料庫以 ODbL 授權條款釋出。
