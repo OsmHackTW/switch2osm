@@ -56,18 +56,18 @@ OSM 地圖資料庫被稱為 planet.osm，整個完整資料庫與定期更新�
 
 ### 使用案例
 
-The choice between raster tiles and vector tiles depends on the specific use case and requirements. Here are some scenarios where each type excels:
+點陣圖磚與向量圖磚的選擇端看特定用途以及需求，這邊列出幾種常見適用不同情境的案例：
 
 **點陣圖磚**
 
-* Aesthetically detailed maps, such as topographic maps or satellite imagery.
-* Static maps that don't require real-time interactivity or frequent updates.
-* Cases where map data is relatively stable and doesn't need frequent modifications or styling changes.
+* 非對稱的詳盡地圖，例如等高線地圖或是衛星影像。
+* 不需要即時互動或是時常更新的靜態地圖。
+* 地圖資料相對穩定與不需要時常更動樣式的例子。
 
 **向量圖磚**
 
-* Dynamic maps that require real-time customization and interactivity, such as user-driven styling or filtering.
-* Mobile applications or areas with limited bandwidth or storage capacity.
+* 需要即時客製化與互動的動態地圖，例如使用者指定的樣式或是篩選。
+* 行動裝置或是有限頻寬的區域，或是儲存空間有限。
 * Maps with frequently changing data, where updates need to be reflected in real-time.
 
 Both raster tiles and vector tiles have their merits depending on the use case. Raster tiles are suitable for detailed visualization and static map styles, while vector tiles excel in dynamic styling, interactivity, and efficient data transfer. By understanding the differences between these tile types, you can make an informed decision when choosing the most appropriate tile format for your specific mapping needs.
