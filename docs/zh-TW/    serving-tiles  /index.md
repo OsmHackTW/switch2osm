@@ -8,9 +8,9 @@ lang: zh-TW
 
 使用第三方服務商的圖磚是最簡單切換使用開放街圖的方式，而且會有折扣。然而，如果想要完全控制權的話，您需要渲染以及架設您的圖磚這一章節會解釋怎麼做。
 
-![原始 osm 資料](/assets/img/raw-osm-data.webp){ data-title="Raw OSM data" data-description="透過 OSM API 來編輯，在 JOSM 的預設地圖繪製樣式載入原始開放街圖資料。https://www.openstreetmap.org/#map=16/18.0253/-63.0485" } | ![圖磚伺服器](/assets/img/vector_tiles_pyramid_structure_window.webp){ data-title="地圖標題金字塔" data-description="地圖的每一層級都被切成小塊叫做圖磚。通常一塊圖磚大小是 256×256 像素。" } | ![地圖使用](/assets/img/map-usage.webp){ data-title="您的網站使用的圖磚" data-description="由您的圖磚伺服器提供的圖磚會顯示在客戶端的瀏覽器或是其他應用程式。" }
+![原始 osm 資料](/assets/img/raw-osm-data.webp){ data-title="原始 OSM 資料" data-description="透過 OSM API 來編輯，在 JOSM 的預設地圖繪製樣式載入原始開放街圖資料。https://www.openstreetmap.org/#map=16/18.0253/-63.0485" } | ![圖磚伺服器](/assets/img/vector_tiles_pyramid_structure_window.webp){ data-title="地圖標題金字塔" data-description="地圖的每一層級都被切成小塊叫做圖磚。通常一塊圖磚大小是 256×256 像素。" } | ![地圖使用](/assets/img/map-usage.webp){ data-title="您的網站使用的圖磚" data-description="由您的圖磚伺服器提供的圖磚會顯示在客戶端的瀏覽器或是其他應用程式。" }
 :--:|:--:|:--:
-:simple-openstreetmap: :material-database-import: OpenStreetMap raw data | :material-server: :material-checkerboard-plus: 您自己的圖磚伺服器 | :fontawesome-solid-users: :octicons-browser-16: 使用者瀏覽您的網站
+:simple-openstreetmap: :material-database-import: 開放街圖原始資料 | :material-server: :material-checkerboard-plus: 您自己的圖磚伺服器 | :fontawesome-solid-users: :octicons-browser-16: 使用者瀏覽您的網站
 
 ## 你真得需要嗎？
 
