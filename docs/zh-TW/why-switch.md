@@ -8,23 +8,23 @@ lang: zh-TW
 
 ## 開放街圖不會向你收費
 
-OpenStreetMap is open data. We won’t charge for it&nbsp;– ever. Our licence says that you can always copy our data for free.
-This data is made into the “map tiles” that you show on your site. You can do this yourself. Or you can find a specialist to do it: some will charge for this, some won’t. But OpenStreetMap itself will never charge you for the data.
+開放街圖為開放資料，我們不會收費 it&nbsp;– 永遠。我們的授權條款允許您總是可以免費複製我們的資料。
+這些資料會製作成顯示在您網站的“地圖圖磚”。您可以找尋專家為您做：有些人會向您收費，有些人不會。但開放街圖本身永遠不會因為這些資料向您收費。
 
 ## 讓地圖更貼合你的用途
 
-With other map providers, the map looks how the provider wants it to look. You might be able to do a bit of rudimentary recolouring. But it’s still their style of map, not yours.
+其他地圖服務提供商，由服務商決定地圖會長什麼樣子，也許您有辦法選其他顏色，但整體的樣式由他們決定，您無法更動。
 
-With OpenStreetMap, you’re in control. Turning the data into tiles can be done any way you like. Want to emphasise cycle routes and play down motorways? No problem. (Most other maps don’t even have cycle routes.) Want to label subway stops but ignore bus stops? Easy.
+而開放街圖的話，您有完全的控制權，將資料轉為您想要的圖磚樣式。想要強調單車路線並且降低高速公路變得別那麼顯眼？當然沒問題。(其他地圖不會收單車路線。)想要標示捷運車站然後忽視以車站？很簡單能達成。
 
 ## 豐量、準確與即時的地圖資料
 
-Most commercial providers just do streets. OpenStreetMap might have “street” in the name, but we do much more. Natural features, bus routes, footpaths and cycleways, administrative boundaries, shops, rivers and canals… you name it.
+大部分服務商只會處理到道路層級，而開放街圖名字中有道路，但我們能做到更多。自然圖徵，公車路線，小徑與單車道，行政邊界，商店，溪流與溝渠等，你能想得到的都可以。
 
-Commercial providers also only update their data every month, if you’re lucky. New roads and buildings can be missing from their datasets long after they’ve opened. OpenStreetMap data is constantly updated, and you can get those updates every day, every hour or even every minute if you want.
+如果幸運的話，商業服務商通常也只會每個月更新他們的圖資。新的道路與建築可能會存在一陣子但仍沒有在他們資料集當中。而開放街圖資料時常更新，如果您想要，您可以每天都更新，每小時或是甚至每分鐘更新都可以做得到。
 
-All this is contributed by our volunteers (over 1,000,000 signed up so far, and growing every day) – the people who really know about their area. That’s why OpenStreetMap often shows new developments before any commercial provider.
+而這一切都由志工付出 (超過 1,000,000 位註冊用戶，並且每日持續增加) – 這些志工往往熟悉所在的地方，因此開放街圖能夠趕在商業服務商之前更新最新的動態。
 
 ## 比你想得還簡單
 
-There’s no limit to what you can do with OpenStreetMap. Yet it needn’t take long to get started. You can switch to OSM in under an hour using tools like the easy [Leaflet](http://leafletjs.com/){: target=_blank} and a provider of [free tiles](/providers.md). Read the rest of this site to get started with the possibilities.
+您使用開放街圖並沒有受到限制，也許您需要一段時間才能上手。您可以用簡單的工具如 [Leaflet](http://leafletjs.com/){: target=_blank} 以及[免費圖磚](/providers.md)在一小時內切換使用 OSM。請持續閱讀本站內容來開始吧。
