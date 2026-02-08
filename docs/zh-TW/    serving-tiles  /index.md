@@ -10,19 +10,19 @@ lang: zh-TW
 
 ![原始 osm 資料](/assets/img/raw-osm-data.webp){ data-title="Raw OSM data" data-description="透過 OSM API 來編輯，在 JOSM 的預設地圖繪製樣式載入原始開放街圖資料。https://www.openstreetmap.org/#map=16/18.0253/-63.0485" } | ![圖磚伺服器](/assets/img/vector_tiles_pyramid_structure_window.webp){ data-title="地圖標題金字塔" data-description="地圖的每一層級都被切成小塊叫做圖磚。通常一塊圖磚大小是 256×256 像素。" } | ![地圖使用](/assets/img/map-usage.webp){ data-title="您的網站使用的圖磚" data-description="由您的圖磚伺服器提供的圖磚會顯示在客戶端的瀏覽器或是其他應用程式。" }
 :--:|:--:|:--:
-:simple-openstreetmap: :material-database-import: OpenStreetMap raw data | :material-server: :material-checkerboard-plus: Your own tile server | :fontawesome-solid-users: :octicons-browser-16: Users browsing your website
+:simple-openstreetmap: :material-database-import: OpenStreetMap raw data | :material-server: :material-checkerboard-plus: 您自己的圖磚伺服器 | :fontawesome-solid-users: :octicons-browser-16: 使用者瀏覽您的網站
 
 ## 你真得需要嗎？
 
-Both generating and serving tiles incur significant hardware requirements, especially if you need global coverage and regular updates.
+自己產生以及提供圖磚兩者都需要一定的硬體需求，特別是如果要包括全球範圍以及時時更新。
 
-If you are setting up your own tile server, we recommend that you use [Ubuntu Linux](https://ubuntu.com/){: target=_blank} or [Debian](https://www.debian.org/releases/){: target=_blank}.
+如果您需要設定自己的圖磚伺服器，我們建議您使用 [Ubuntu Linux](https://ubuntu.com/){: target=_blank} 或是 [Debian](https://www.debian.org/releases/){: target=_blank}。
 
 ## 選項
 
-1. Install locally on [Debian 12](manually-building-a-tile-server-debian-12.md), [Ubuntu 24.04](manually-building-a-tile-server-ubuntu-24-04-lts.md), or [Debian 11](manually-building-a-tile-server-debian-11.md).
+1. 在 [Debian 12](manually-building-a-tile-server-debian-12.md)，[Ubuntu 24.04](manually-building-a-tile-server-ubuntu-24-04-lts.md)，或是 [Debian 11](manually-building-a-tile-server-debian-11.md) 本地端安裝。
 
-2. Use [docker](using-a-docker-container.md).
+2. 使用 [docker](using-a-docker-container.md)。
 
 ## 系統需求
 
