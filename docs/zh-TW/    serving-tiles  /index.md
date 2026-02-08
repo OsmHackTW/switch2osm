@@ -6,9 +6,9 @@ lang: zh-TW
 
 # {{ title }}
 
-Tiles from a third-party provider are the simplest way to make the switch to OpenStreetMap, and offer clarity of cost. However, if you’d like to take full control of your destiny, you can render and serve your own tiles. This section explains how.
+使用第三方服務商的圖磚是最簡單切換使用開放街圖的方式，而且會有折扣。然而，如果想要完全控制權的話，您需要渲染以及架設您的圖磚這一章節會解釋怎麼做。
 
-![raw osm data](/assets/img/raw-osm-data.webp){ data-title="Raw OSM data" data-description="Raw OpenStreetMap data with the default map paint style in JOSM, retrieved via OSM API for editing. https://www.openstreetmap.org/#map=16/18.0253/-63.0485" } | ![tile server](/assets/img/vector_tiles_pyramid_structure_window.webp){ data-title="Map tiles pyramid" data-description="Each zoom level of the map is cut into small parts called tiles. Usually, the size of one tile is 256×256 pixels." } | ![map usage](/assets/img/map-usage.webp){ data-title="Tiles are served in your website" data-description="The tiles prepared by your tile server are then displayed in the client's web browser or other application." }
+![原始 osm 資料](/assets/img/raw-osm-data.webp){ data-title="Raw OSM data" data-description="透過 OSM API 來編輯，在 JOSM 的預設地圖繪製樣式載入原始開放街圖資料。https://www.openstreetmap.org/#map=16/18.0253/-63.0485" } | ![圖磚伺服器](/assets/img/vector_tiles_pyramid_structure_window.webp){ data-title="地圖標題金字塔" data-description="地圖的每一層級都被切成小塊叫做圖磚。通常一塊圖磚大小是 256×256 像素。" } | ![地圖使用](/assets/img/map-usage.webp){ data-title="您的網站使用的圖磚" data-description="由您的圖磚伺服器提供的圖磚會顯示在客戶端的瀏覽器或是其他應用程式。" }
 :--:|:--:|:--:
 :simple-openstreetmap: :material-database-import: OpenStreetMap raw data | :material-server: :material-checkerboard-plus: Your own tile server | :fontawesome-solid-users: :octicons-browser-16: Users browsing your website
 
