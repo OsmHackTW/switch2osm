@@ -68,9 +68,9 @@ OSM 地圖資料庫被稱為 planet.osm，整個完整資料庫與定期更新�
 
 * 需要即時客製化與互動的動態地圖，例如使用者指定的樣式或是篩選。
 * 行動裝置或是有限頻寬的區域，或是儲存空間有限。
-* Maps with frequently changing data, where updates need to be reflected in real-time.
+* 時常更動資料的地圖，需要即時反應更新狀態。
 
-Both raster tiles and vector tiles have their merits depending on the use case. Raster tiles are suitable for detailed visualization and static map styles, while vector tiles excel in dynamic styling, interactivity, and efficient data transfer. By understanding the differences between these tile types, you can make an informed decision when choosing the most appropriate tile format for your specific mapping needs.
+依據使用情境點陣圖磚與向量圖磚都有其優勢。點陣圖磚適合詳細顯示視覺化成果以及靜態地圖樣式，而向量圖磚則是適合動態變動樣式，互動以及傳輸資料時有效率。藉由瞭解這些圖磚類型的差異，你可以做出深思熟慮之下的地圖使用考量。
 
 ## API/函式庫
 
