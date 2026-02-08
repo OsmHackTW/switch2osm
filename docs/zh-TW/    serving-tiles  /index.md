@@ -26,12 +26,12 @@ lang: zh-TW
 
 ## 系統需求
 
-Serving your own maps is a fairly intensive task. Depending on the size of the area you’re interested in serving and the traffic you expect the system requirements will vary. In general, requirements will range from 10-20GB of storage, 4GB of memory, and a modern dual-core processor for a city-sized region to 1TB of fast storage, 24GB of memory, and a quad-core processor for the entire planet.
+自架您的地圖也許有一定的難度，需視您所想要呈現的區域大小以及預計的流量，系統需求會變動很大。一般來說，一個城市區域，儲存空間需要 10-20GB，4GB 的記憶體，以及現代的雙核心處理器，而一整個地球則需要 1TB 的快存，24GB 的記憶體，以及四核心處理器。
 
-We would recommend that you begin with extracts of OpenStreetMap data – for example, a city, county or small country – rather than spending a week importing the whole world (planet.osm) and then having to restart because of a configuration mistake! You can download extracts from:
+我們建議從截取開放街圖資料起頭 - 例如說，國土小的國家，國家，城市 - 而不是花一星期時間匯入整個地球的資料 (planet.som)，接著遇到設定錯誤而需要重新開機！您可以從這些地方下載截取：
 
-* [Geofabrik](https://download.geofabrik.de/){: target=_blank} (countries and provinces)
-* [Protomaps Extracts](https://protomaps.com/extracts){: target=_blank} (minutely-updated cities and small countries)
+* [Geofabrik](https://download.geofabrik.de/){: target=_blank} (國家與省份)
+* [Protomaps Extracts](https://protomaps.com/extracts){: target=_blank} (分鐘更新的城市以及小國家)
 * [download.openstreetmap.fr](https://download.openstreetmap.fr/){: target=_blank}
 
 ## 工具組合
