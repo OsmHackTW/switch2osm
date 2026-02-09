@@ -36,12 +36,12 @@ lang: zh-TW
 
 ## 工具組合
 
-We use a series of tools for generating and serving map tiles.
+我們使用一系列的工具來產生與供應地圖圖磚。
 
-**Apache** provides the front end server that handles requests from your web browser and passes the request to mod_tile. The Apache web server can also be used to serve static web content like the HTML, JavaScript, or CSS for your map webpage.
+**Apache** 提供前端伺服器，能夠處理來自您的灠覽器的請求，並且傳遞給 mod_tile。Apache 網頁伺服器也能夠供應靜態網頁內容 HTML、JavaScription 或是 CSS 到您的地圖網頁。
 
-Once Apache handles the request from the web user, it passes the request to mod_tile to deal with. Mod_tile checks if the tile has already been created and is ready for use or whether it needs to be updated due to not being in the cache already. If it is already available and doesn’t need to be rendered, then it immediately sends the tile back to the client. If it does need to be rendered, then it will add it to a “render request” queue, and when it gets to the top of the queue, a tile renderer will render it and send the tile back to the client.
+一旦 Apache 處理來自網路使用者的請求，會傳遞需求到 mod_tile 來處理。Mod_tile 會檢查圖磚是否已經生成，是否仍可用，或者是沒有在快苡而需要更新。如果已經有圖磚的話，並不需要重新渲染，接著就會回傳圖磚給客戶端。如果需要重新渲染，接著就會加到“渲染請求”佇列，當達到佇列的頂端時，圖磚渲染器會渲染出圖磚，並且回傳給客戶端。
 
-We use a tool called **Mapnik** to render tiles. It pulls requests from the work queue as fast as possible, extracts data from various data sources according to the style information, and renders the tile. This tile is passed back to the client and moves on to the next item in the queue.
+我們使用叫做 **Mapnik** 的渲染圖磚。要渲染圖磚，需要盡快從工作佇列拉取請求，依據樣式資訊從不同資料來源截取資料，以及渲染圖磚。這些圖磚會傳遞到客戶端，接著移動到佇列中的下一項目。
 
-For rendering, OpenStreetMap data is stored in a **PostgreSQL** database created by a tool called **osm2pgsql**. These two pieces work together to allow efficient access to the OpenStreetMap geographic data. It is possible to keep the data in the PostgreSQL database up to date using a stream of diff files produced every 60 seconds on the main OpenStreetMap server.
+要開始渲染，開放街圖資料會儲存在由 **osm2pgsql** 工具製作的 **PostgreSQL** 資料庫。這兩樣程式共同合作，允許有效率的連結開放街圖地理資料，然後也有有辦法運用每 60 秒源源不斷從主要的開放街圖伺服器產生的 dff 檔案，保持 PostgreSQL 資料庫內容在最新狀態。
