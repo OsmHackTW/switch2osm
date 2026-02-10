@@ -6,19 +6,19 @@ lang: zh-TW
 
 # {{ title }}
 
-"Munin" can be used to monitor the activity of "renderd" and "mod_tile" on a server.  Munin is available on a number of platforms; these instructions were tested on  Ubuntu Linux 22.04 in June 2022.
+"Munin" 是用來監控伺服器的 "renderd" 與 "mod_tile" 的活動。Munin 在多個平台都能使用；這份說明是採用 2022 年 6 月的 Ubuntu Linux 22.04 版本。
 
-First, install the necessary software:
+首先，安裝必須的軟體：
 
 ```sh
 sudo apt install munin-node munin libcgi-fast-perl libapache2-mod-fcgid
 ```
 
-If you look at `/etc/apache2/conf-available` you should see that `munin.conf` is a symbolic link to `../../munin/apache24.conf`, which is `/etc/munin/apache24.conf`.
+如果您檢視 `/etc/apache2/conf-available` 您應當看到 `munin.conf` 是系統化連結到 `../../munin/apache24.conf`，實際是 `/etc/munin/apache24.conf`。
 
-The file `/etc/munin/apache24.conf` is Apache's `munin` configuration file. In that file, if you want `munin` to be accessed globally rather than just locally change both instances of `Require local` to `Require all granted`.
+`/etc/munin/apache24.conf` 檔案是 Apache `munin` 設定檔。在檔案中，如果您想要 `munin` 能夠連結全域而非僅止是本地變動，兩樣都必須從 `Require local` 改為 `Require all granted`。
 
-Next edit `/etc/munin/munin.conf`. Uncomment these lines:
+接著編輯 `/etc/munin/munin.conf`。解除以下幾行的的註解狀況：
 
 ```conf
 dbdir /var/lib/munin
@@ -27,16 +27,16 @@ logdir /var/log/munin
 rundir /var/run/munin
 ```
 
-Restart munin and apache:
+重新啟動 munin 與 apache：
 
 ```sh
 sudo /etc/init.d/munin-node restart
 sudo /etc/init.d/apache2 restart
 ```
 
-Browse to `http://yourserveripaddress/munin`. You should see a page showing "apache", "disk", "munin", etc.
+瀏覽 `http://yourserveripaddress/munin`。您應當看到頁面顯示 "apache"、"disk"、"munin"等等。
 
-To add the plugins from mod_tile and renderd to munin:
+要在 mumin 從 mod_tile 與 renderd 增加外掛：
 
 ```sh
 sudo ln -s /usr/share/munin/plugins/mod_tile* /etc/munin/plugins/
