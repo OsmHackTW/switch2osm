@@ -6,13 +6,13 @@ lang: zh-TW
 
 # {{ title }}
 
-If you just want to try things out or you're using an OS other than Ubuntu, and you're using Docker for containerisation, you can try [this](https://github.com/Overv/openstreetmap-tile-server){: target=_blank} (thanks to all the contributors there).  It's based on the instructions [here](/serving-tiles/manually-building-a-tile-server-ubuntu-22-04-lts.md), but is a pre-built container you can install.
+如果您想要試試看，或是您使用 Ubuntu 以外的作業卜統，您可以採用 Docker 來容器化處理，您可以試試[這個](https://github.com/Overv/openstreetmap-tile-server){: target=_blank} (謝謝這邊所有的貢獻者)。這是依據[這邊](/serving-tiles/manually-building-a-tile-server-ubuntu-22-04-lts.md)的指引，但您可以安裝預先建構好的容器。
 
-## Docker
+## Docker 容器
 
-If you don't already have Docker installed, there are lots of "how-tos" around - see for example [here](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-debian-10){: target=_blank}.
+如果您還沒有安裝 Docker，網路已經有不少"新手指" - 參見[這邊](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-debian-10){: target=_blank}的範例
 
-You'll need around 30GB of disk space for even a small data extract, because the worldwide boundary data that is added to the database is quite large.
+即便只是小的資料截取，您至少需要 30GB 的硬碟空間，因為全世界範圍的資料加進去也相當巨大。
 
 ## 開放街圖資料
 
@@ -51,7 +51,7 @@ If you see something like:
 /data/region.osm.pbf: Is a directory
 ```
 
-or
+或是
 
 ```sh
 createuser: error: creation of new role failed: ERROR: role "renderer" already exists
@@ -85,12 +85,12 @@ You should see a map of the world in your browser.  Then try:
 
 for a map that you can zoom in and out of.  Tiles (especially at low zoom levels) will take a short period of time to appear.
 
-### More Information
+### 更多資訊
 
 This docker container actually supports a lot more than the simple example here - see the [readme](https://github.com/Overv/openstreetmap-tile-server/blob/master/README.md){: target=_blank} for more details about updates, performance tweaks, etc.
 
-### Viewing tiles
+### 檢視圖磚
 
 For a simple “slippy map” that you can modify, you can use an html file “sample_leaflet.html” which is [here](https://github.com/SomeoneElseOSM/mod_tile/blob/switch2osm/extra/sample_leaflet.html){: target=_blank} in mod_tile’s “extra” folder. Edit “hot” in the URL in that file to read “tile”, and then just open that file in a web browser on the machine where you installed the docker container. If that isn’t possible because you’re installing on a server without a local web browser, you’ll also need to edit it to replace “127.0.0.1” with the IP address of the server and copy it to below “/var/www/html” on that server.
 
-If you want to load a different area, just repeat the process from “wget” above. Unfortunately it is necesary to delete and recreate "osm-data" every time you want to load some new data.
+如果您想要載入不同區域，請重覆上述 "wget" 程序。不幸地是，每次想載入一些新資料的時候，您每次必須刪除以及重新建構 "osm-data"。
