@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,17 +24,17 @@
       // initialize Leaflet
       var map = L.map('map').setView({lon: 0, lat: 0}, 2);
 
-      // add the OpenStreetMap tiles
+      // 新增開放街圖圖磚
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
-        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+        attribution: '&copy; <a href="https://openstreetmap.org/copyright">開放街圖貢獻者</a>'
       }).addTo(map);
 
-      // show the scale bar on the lower left corner
+      // 在左下角顯示比例尺
       L.control.scale({imperial: true, metric: true}).addTo(map);
 
-      // show a marker on the map
-      L.marker({lon: 0, lat: 0}).bindPopup('The center of the world').addTo(map);
+      // 在地圖顯示標記
+      L.marker({lon: 0, lat: 0}).bindPopup('全世界的中心').addTo(map);
     </script>
   </body>
 </html>
