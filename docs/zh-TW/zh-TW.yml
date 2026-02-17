@@ -2,57 +2,57 @@ zh_TW:
   plugins:
     - i18n:
         languages:
-          - # ISO code of your language
+          - # 您的語言 ISO 代碼
             locale: zh-TW
-            # Name of your languge
+            # 您的語言名稱
             name: 台灣華語
-            # Day/Night toggle
+            # 白天/夜晚切換
             theme:
               palette:
                 - toggle:
-                    name: 切換到燈光模式
+                    name: 切換到白天模式
                 - toggle:
-                    name: 切換到深色模式
+                    name: 切換到夜晚模式
                 - toggle:
                     name: 切換到系統偏好設定
-            # Translate copyright statement
+            # 翻譯版權聲明
             copyright: "© 2013–2025 開放街圖與貢獻者。 <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/2.0/\" target=\"_blank\"><img alt=\"創用CC授權\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-sa/2.0/80x15.png\" /></a><br />這些資料採用 <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/2.0/\" target=\"_blank\">創用CC相同方式分享 2.0 未本地化授權條款</a>。"
             nav_translations:
-              # Menu item name for the /index.md
+              # /index.md 的選單物件名稱
               Home: Switch2OSM
-              # Menu item name for the /why-switch.md
+              #  /why-switch.md 的選單物件名稱
               Why: 為什麼更換？
-              # Menu item name for the /case-studies.md
+              # /case-studies.md 的選單物件名稱
               Cases: 案例分析
-              # Menu item name for the /the-basics.md
+              # /the-basics.md 的選單物件名稱
               Basics: 基本資訊
-              # Menu item name for the "Using Tiles" tab
+              # "使用圖磚"頁籤的選單物件名稱
               Using: 使用圖磚
-              # Menu item name for the side menu
+              # 側邊欄的選單物件名稱
               Leaflet: 開始使用 Leaflet
-              # Menu item name for the side menu
+              # 側邊欄的選單物件名稱
               OpenLayers: 開始使用 OpenLayers
-              # Menu item name for the side menu
+              # 側邊欄的選單物件名稱
               Vector Tiles: 向量地圖圖磚的威力
-              # Menu item name for the "Serving Tiles" tab
+              # "供應圖磚"頁籤的選單物件名稱
               Serving: 供給圖磚
-              # Serving tiles: Manually building a tile server
+              # 供應圖磚：手動建構圖磚伺服器
               Manually: 手動建構圖磚伺服器
-              # Serving tiles: Using a Docker container
-              Docker: 使用 Docker 容器
-              # Serving tiles: Monitoring using Munin
+              # 供應圖磚：採用 Docker 容器
+              Docker: 採用 Docker 容器
+              # 供應圖磚：採用 Munin 監控
               Munin: 採用 Munin 監控
-              # Serving tiles: Updating your database as people edit OpenStreetMap
+              # 供應圖磚：人們編輯開放街圖時更新您的資料庫
               Updating: 在人們編輯過開放街圖之後更新資料庫
-              # Serving tiles: Vector Map Tiles
+              # 供應圖磚：向量地圖圖磚
               Serving vector tiles: 向量地圖圖磚
-              # Vector Map Tiles: Steps to Serve Vector Map Tiles
+              # 向量地圖圖磚：供應向量地圖圖磚的步驟
               Steps: 一般步驟
-              # Vector Map Tiles: Getting started with TileServer GL
+              # 向量地圖圖磚：開始使用 TileServer GL
               TileServer GL: 開始使用 TileServer GL
-              # Menu item name for the /other-uses.md
+              # /other-uses.md 的選單物件名稱
               Other: 其他用途
-              # Menu item name for the /providers.md
+              # /providers.md 的選單物件名稱
               Providers: 服務商
-              # Menu item name for the /find-out-more.md
+              # /find-out-more.md 的選單物件名稱
               More: 取得協助
