@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -12,12 +12,12 @@
         margin: 0;
       }
       #map {
-        /* configure the size of the map */
+        /* 設定地圖的大小 */
         width: 100%;
         height: 100%;
       }
     </style>
-    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+    <!-- 以下的行是為了舊的環境，例如 Internet Explorer 與 Android 4.x -->
     <script src="http://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
     <script src="http://openlayers.org/en/v3.18.2/build/ol.js"></script>
   </head>
@@ -28,9 +28,9 @@
       var map = new ol.Map({
         layers: [
           new ol.layer.Tile({
-            // This illustrates a custom tiles source but for using
-            // official OpenStreetMap server new ol.source.OSM()
-            // instead of new ol.source.XYZ(...) is enough
+            // 這描述自訂圖磚來源但使用
+            // 官方開放街圖伺服器新 ol.source.OSM()
+            // 而非新 ol.source.XYZ(...) 已經足夠
             source: new ol.source.XYZ({
               attributions: [
               ol.source.OSM.ATTRIBUTION,
@@ -44,12 +44,12 @@
           })
         ],
         controls: ol.control.defaults({
-          // Set to display OSM attributions on the bottom right control
+          // 設定在右下角顯示 OSM 署名
           attributionOptions:  {
             collapsed: false
           }
         }).extend([
-          new ol.control.ScaleLine() // Add scale line to the defaults controls
+          new ol.control.ScaleLine() // 在預設位置新增比例尺
         ]),
         target: 'map',
         view: new ol.View({
@@ -58,7 +58,7 @@
         })
       });
 
-      // Add vector layer with a feature and a style using an icon
+      // 在向量圖層新增圖徵與圖示樣式
       var vectorLayer = new ol.layer.Vector({
         source: new ol.source.Vector({
           features: [
@@ -66,7 +66,7 @@
               geometry: new ol.geom.Point(
                 ol.proj.fromLonLat([0, 0])
               ),
-              name: 'The center of the world'
+              name: '全世界的中心'
             })
           ]
         }),
@@ -82,7 +82,7 @@
 
       map.addLayer(vectorLayer);
 
-      // Overlay to manage popup on the top of the map
+      // 套疊來管理地圖上跳出選單
       var popup = document.getElementById('popup');
       var overLay = new ol.Overlay({
         element: popup,
@@ -91,7 +91,7 @@
 
       map.addOverlay(overLay);
 
-      // Manage click on the map to display/hide popup
+      // 管理地圖上點擊行為來顯示/隱藏跳出選單
       map.on('click', function(e) {
         var info = [];
         map.forEachFeatureAtPixel(e.pixel, function (feature) {
