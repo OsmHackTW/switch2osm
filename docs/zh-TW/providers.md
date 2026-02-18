@@ -57,3 +57,11 @@ lang: zh-TW
 * [Geofabrik](https://www.geofabrik.de/maps/rendering.html){: target=_blank}，德國
 * [Makina Corpus](https://makina-corpus.com/){: target=_blank}，法國
 * [mapz.com by Kober-Kümmerly+Frey](https://www.mapz.com/){: target=_blank}，德國
+
+* 
+## 地圖印刷
+
+以下服務商提供高解析度，提供專業人士可列印的，基於開放街圖資料印刷的地圖服務。
+
+* [mapz.com by Kober-Kümmerly+Frey](https://www.mapz.com/)，德國
+* [Printmaps.net](https://www.printmaps.net/)，德國/奧地利
