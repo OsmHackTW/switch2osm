@@ -43,19 +43,19 @@ sudo ln -s /usr/share/munin/plugins/mod_tile* /etc/munin/plugins/
 sudo ln -s /usr/share/munin/plugins/renderd* /etc/munin/plugins/
 ```
 
-There should be 4 mod_tile plugins and 5 renderd ones.  Run munin's cron job manually once:
+應當會出現 4 個 mod_tile 外掛以及 5 個渲染。手動執行 munin cron 工作：
 
 ```sh
 sudo -u munin munin-cron
 ```
 
-Restart munin and apache again:
+請再重新開始 munin 以及 apache：
 
 ```sh
 sudo /etc/init.d/munin-node restart
 sudo /etc/init.d/apache2 restart
 ```
 
-After a short delay, refreshing `http://yourserveripaddress/munin/` should now show entries for "mod_tile" and "renderd".
+經過短暫的延遲後，請重新整理 `http://yourserveripaddress/munin/` 後現在應當顯示 "mod_tile" 與 "renderd" 的項目。
 
-Munin updates its graphs every 5 minutes, as configured by the cron file `/etc/cron.d/munin`.
+在 cron 檔案 `/etc/cron.d/munin` 設定 Munin 每五分更新其圖形。
