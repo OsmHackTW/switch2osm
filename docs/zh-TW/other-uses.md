@@ -12,7 +12,7 @@ lang: zh-TW
 
 * [Osmosis](http://wiki.openstreetmap.org/wiki/Osmosis){: target=_blank} 是全方位的載入 OSM 資料到資料庫的 Java 應用程式，大多數使用 OSM 資料的應用程式都有一定程度使用 Osmosis 的情境。
 * [Osmium](http://wiki.openstreetmap.org/wiki/Osmium){: target=_blank} 是具有彈性的架構，很快變得受歡迎，相比 Osmosi 提供高度客製化的選項。
-* [Mapbox Studio](https://www.mapbox.com/mapbox-studio/){: target=_blank} 是一整套製作'向量圖磚'的工具，能夠在伺服器端或是客戶端渲染圖資。
+* [Mapbox Studio](https://www.mapbox.com/mapbox-studio/){: target=_blank} 是一整套製作「向量圖磚」的工具，能夠在伺服器端或是客戶端渲染圖資。
 
 ## Geocoding 服務
 

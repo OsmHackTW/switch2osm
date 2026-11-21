@@ -8,7 +8,7 @@ lang: zh-TW
 
 ## 開發服務與諮詢
 
-以下的公司為想要轉換使用開放街圖資料的人提供開發服務以及諮詢業務。
+以下公司為有意更換到開放街圖（OpenStreetMap）者提供開發服務以及諮詢業務。
 
 * [Alantgeo](https://www.alantgeo.com.au){: target=_blank}，澳洲
 * [Camptocamp](https://camptocamp.com/){: target=_blank}，瑞士
@@ -32,7 +32,7 @@ lang: zh-TW
 
 ## 圖傳提供
 
-以下公司供應圖磚。
+以下公司提供圖磚服務。
 
 ### 允許免費使用
 
@@ -51,7 +51,7 @@ lang: zh-TW
 * [Tracestrack](https://www.tracestrack.com){: target=_blank}，荷蘭
 * [Esri](https://www.esri.com){: target=_blank}，美國
 
-### 只服務付費客戶
+### 僅限付費客戶
 
 * [Champs-Libres](https://www.champs-libres.coop/){: target=_blank}，比利時
 * [Geofabrik](https://www.geofabrik.de/maps/rendering.html){: target=_blank}，德國

@@ -10,13 +10,13 @@ zh_TW:
             theme:
               palette:
                 - toggle:
-                    name: 切換到白天模式
+                    name: 切換到淺色模式
                 - toggle:
-                    name: 切換到夜晚模式
+                    name: 切換到深色模式
                 - toggle:
                     name: 切換到系統偏好設定
             # 翻譯版權聲明
-            copyright: "© 2013–2025 開放街圖與貢獻者。 <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/2.0/\" target=\"_blank\"><img alt=\"創用CC授權\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-sa/2.0/80x15.png\" /></a><br />這些資料採用 <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/2.0/\" target=\"_blank\">創用CC相同方式分享 2.0 未本地化授權條款</a>。"
+            copyright: "© 2013–2025 開放街圖與貢獻者。 <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/2.0/\" target=\"_blank\"><img alt=\"創用CC授權\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-sa/2.0/80x15.png\" /></a><br />本作品採用 <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/2.0/\" target=\"_blank\">創用 CC 姓名標示-相同方式分享 2.0 通用版授權條款</a>。"
             nav_translations:
               # /index.md 的選單物件名稱
               Home: Switch2OSM
@@ -25,34 +25,32 @@ zh_TW:
               # /case-studies.md 的選單物件名稱
               Cases: 案例分析
               # /the-basics.md 的選單物件名稱
-              Basics: 基本資訊
-              # "使用圖磚"頁籤的選單物件名稱
+              Basics: 基礎概念
+              # "Using Tiles"頁籤的選單物件名稱
               Using: 使用圖磚
               # 側邊欄的選單物件名稱
               Leaflet: 開始使用 Leaflet
               # 側邊欄的選單物件名稱
               OpenLayers: 開始使用 OpenLayers
               # 側邊欄的選單物件名稱
-              Vector Tiles: 向量地圖圖磚的威力
-              # "供應圖磚"頁籤的選單物件名稱
-              Serving: 供給圖磚
-              # 供應圖磚：手動建構圖磚伺服器
-              Manually: 手動建構圖磚伺服器
-              # 供應圖磚：採用 Docker 容器
-              Docker: 採用 Docker 容器
-              # 供應圖磚：採用 Munin 監控
-              Munin: 採用 Munin 監控
-              # 供應圖磚：人們編輯開放街圖時更新您的資料庫
-              Updating: 在人們編輯過開放街圖之後更新資料庫
-              # 供應圖磚：向量地圖圖磚
-              Serving vector tiles: 向量地圖圖磚
-              # 向量地圖圖磚：供應向量地圖圖磚的步驟
-              Steps: 一般步驟
-              # 向量地圖圖磚：開始使用 TileServer GL
-              TileServer GL: 開始使用 TileServer GL
+              MapLibre: 開始使用 MapLibre GL
+              # 側邊欄的選單物件名稱
+              Custom Data: 使用 MapLibre GL 加入自訂資料
+              # 側邊欄的選單物件名稱
+              Vector Tiles: 向量圖磚的威力
+              # Menu item name for the "Serving Tiles" tab
+              Serving: 自架圖磚
+              # Serving tiles: Manually building a tile server
+              Manually: 手動架設圖磚伺服器
+              # Serving tiles: Using a Docker container
+              Docker: 使用 Docker 容器
+              # Serving tiles: Monitoring using Munin
+              Munin: 使用 Munin 監測
+              # Serving tiles: Updating your database as people edit OpenStreetMap
+              Updating: 隨開放街圖編輯同步更新你的資料庫
               # /other-uses.md 的選單物件名稱
               Other: 其他用途
               # /providers.md 的選單物件名稱
-              Providers: 服務商
+              Providers: 服務供應商
               # /find-out-more.md 的選單物件名稱
-              More: 取得協助
+              More: 了解更多

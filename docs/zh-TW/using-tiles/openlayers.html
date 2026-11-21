@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>簡易地圖</title>
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.18.2/css/ol.css" type="text/css">
+    <style>
+      html, body {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      #map {
+        /* 設定地圖大小 */
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <!-- 下面這行只有 Internet Explorer 與 Android 4.x 等舊環境才需要 -->
+    <script src="http://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <script src="http://openlayers.org/en/v3.18.2/build/ol.js"></script>
+  </head>
+  <body>
+    <div id="map" class="map"></div>
+    <div id="popup" style="padding: 10px;background-color: white;"></div>
+    <script>
+      var map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            // 這裡示範自訂圖磚來源；若要使用
+            // 開放街圖官方伺服器，用 new ol.source.OSM()
+            // 取代 new ol.source.XYZ(...) 即可
+            source: new ol.source.XYZ({
+              attributions: [
+              ol.source.OSM.ATTRIBUTION,
+                'Tiles courtesy of ' +
+                '<a href="http://openstreetmap.org">' +
+                'OpenStreetMap' +
+                '</a>'
+              ],
+              url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+            })
+          })
+        ],
+        controls: ol.control.defaults({
+          // 設定在右下角控制項顯示 OSM 版權標示
+          attributionOptions:  {
+            collapsed: false
+          }
+        }).extend([
+          new ol.control.ScaleLine() // 在預設控制項中加入比例尺
+        ]),
+        target: 'map',
+        view: new ol.View({
+          center: ol.proj.fromLonLat([0, 0]),
+          zoom: 2
+        })
+      });
+
+      // 加入含有一個圖徵、並以圖示為樣式的向量圖層
+      var vectorLayer = new ol.layer.Vector({
+        source: new ol.source.Vector({
+          features: [
+            new ol.Feature({
+              geometry: new ol.geom.Point(
+                ol.proj.fromLonLat([0, 0])
+              ),
+              name: '世界的中心'
+            })
+          ]
+        }),
+        style: new ol.style.Style({
+          image: new ol.style.Icon({
+            anchor: [0.5, 46],
+            anchorXUnits: 'fraction',
+            anchorYUnits: 'pixels',
+            src: 'http://openlayers.org/en/latest/examples/data/icon.png'
+          })
+        })
+      });
+
+      map.addLayer(vectorLayer);
+
+      // 用來管理地圖上方彈出視窗的疊加層
+      var popup = document.getElementById('popup');
+      var overLay = new ol.Overlay({
+        element: popup,
+        position: ol.proj.fromLonLat([0, 0])
+      });
+
+      map.addOverlay(overLay);
+
+      // 處理地圖點擊事件以顯示／隱藏彈出視窗
+      map.on('click', function(e) {
+        var info = [];
+        map.forEachFeatureAtPixel(e.pixel, function (feature) {
+          info.push(feature.get('name'));
+        });
+        if (info.length > 0) {
+          popup.innerHTML = info.join(',');
+          popup.style.display = 'inline';
+        } else {
+          popup.innerHTML = '&nbsp;';
+          popup.style.display = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>

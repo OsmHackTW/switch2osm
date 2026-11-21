@@ -1,12 +1,13 @@
 ---
 layout: page
+
 title: 探索更多
 lang: zh-TW
 ---
 
-## 取得幫助
+## 取得協助
 
-開放街圖為去中心化，志工運作的專案，所以並沒有單一聯繫 email 地址能讓你詢問。不過仍有豐富的社群資源能夠解決你的詢問與遇到的問題。
+開放街圖（OpenStreetMap）為去中心化，志工運作的專案，因此沒有單一的聯絡窗口可供詢問。不過仍有豐富的社群資源能夠解決你的詢問與遇到的問題。
 
 * [開放街圖 IRC](https://irc.openstreetmap.org/){: target=_blank} (OpenStreetMap IRC, Internet Relay Chat): 24-hour live OSM chat (use channel `#osm` or `#osm-dev`)
 * [互動論壇](http://community.openstreetmap.org/){: target=_blank} (Interactive Forum)
@@ -25,16 +26,17 @@ lang: zh-TW
 
 ## 書籍
 
-* [開放街圖：使用與強化全球的自由地圖](http://openstreetmap.info/){: target=_blank} (OpenStreetMap: Using and Enhancing the Free Map of the World, English/German)
-* [開放街圖：做自己的製圖家](https://www.packtpub.com/openstreetmap/book){: target=_blank} (OpenStreetMap: Be Your Own Cartographer, English)
-* [開放街圖：新手指南](http://en.flossmanuals.net/openstreetmap/){: target=_blank} (OpenStreetMap: A Beginner’s Guide, English/French)
-* [OpenLayers 2.10 新手指南](https://www.packtpub.com/openlayers-2-1-javascript-web-mapping-library-beginners-guide/book){: target=_blank} (OpenLayers 2.10 Beginners Guide, English)
+* [開放街圖：使用與強化全球的自由地圖](http://openstreetmap.info/){: target=_blank} （OpenStreetMap: Using and Enhancing the Free Map of the World，英文／德文）
+* [開放街圖：做自己的製圖家](https://www.packtpub.com/openstreetmap/book){: target=_blank} （OpenStreetMap: Be Your Own Cartographer，英文）
+* [開放街圖：新手指南](http://en.flossmanuals.net/openstreetmap/){: target=_blank} (OpenStreetMap: A Beginner’s Guide, English/French)（英文／法文）
+* [OpenLayers 2.10 新手指南](https://www.packtpub.com/openlayers-2-1-javascript-web-mapping-library-beginners-guide/book){: target=_blank} (OpenLayers 2.10 Beginners Guide, English)（英文）
+
 
 ## 社群資源
 
 * [開放街圖基金會](https://osmfoundation.org/){: target=_blank} (OpenStreetMap Foundation)
 * [wiki 專案](https://wiki.openstreetmap.org/){: target=_blank} (Project wiki)
-* [郵件論壇](https://lists.openstreetmap.org/listinfo){: target=_blank} (Mailing lists, searchable archive)
+* [郵件論壇](https://lists.openstreetmap.org/listinfo){: target=_blank} (Mailing lists, searchable archive)（封存可搜尋）
 
 ## 媒體詢問
 
@@ -42,6 +44,6 @@ lang: zh-TW
 
 # 關於 switch2osm
 
-Switch2osm (改用 OSM) 是由社群驅動，背後是 [Richard Fairhurst](http://www.systemed.net/){: target=_blank} 與 [Paul Norman](http://www.paulnorman.ca/){: target=_blank} 發起，再加上開放街圖社群的協助下進行。你可以[到 GitHub 參與](https://github.com/switch2osm/switch2osm.github.io){: target=_blank}。
+Switch2osm 是由社群驅動，由 [Richard Fairhurst](http://www.systemed.net/){: target=_blank} 和 [Paul Norman](http://www.paulnorman.ca/){: target=_blank} 發起，並獲得開放街圖社群大力協助下進行。你可以[在 GitHub 上參與](https://github.com/switch2osm/switch2osm.github.io){: target=_blank}。
 
-任何竟見或回饋都歡迎！請透過第一個站台的 IRC 聯繫我們。
+有任何意見或建議嗎？請優先透過 IRC 聯繫。
