@@ -21,7 +21,7 @@ zh_TW:
               # /index.md 的選單物件名稱
               Home: Switch2OSM
               #  /why-switch.md 的選單物件名稱
-              Why: 為什麼更換？
+              Why: 為什麼要轉換？
               # /case-studies.md 的選單物件名稱
               Cases: 案例分析
               # /the-basics.md 的選單物件名稱
@@ -49,7 +49,7 @@ zh_TW:
               # Serving tiles: Updating your database as people edit OpenStreetMap
               Updating: 隨開放街圖編輯同步更新你的資料庫
               # /other-uses.md 的選單物件名稱
-              Other: 其他用途
+              Other: 其他應用
               # /providers.md 的選單物件名稱
               Providers: 服務供應商
               # /find-out-more.md 的選單物件名稱

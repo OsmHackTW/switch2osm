@@ -1,49 +1,47 @@
 ---
 layout: page
-
-title: 探索更多
+title: 了解更多
 lang: zh-TW
 ---
 
 ## 取得協助
 
-開放街圖（OpenStreetMap）為去中心化，志工運作的專案，因此沒有單一的聯絡窗口可供詢問。不過仍有豐富的社群資源能夠解決你的詢問與遇到的問題。
+開放街圖（OpenStreetMap）是由志工經營的去中心化專案，因此沒有單一的聯絡電子郵件可供詢問。不過，社群累積的知識能協助你解決各種問題。
 
-* [開放街圖 IRC](https://irc.openstreetmap.org/){: target=_blank} (OpenStreetMap IRC, Internet Relay Chat): 24-hour live OSM chat (use channel `#osm` or `#osm-dev`)
-* [互動論壇](http://community.openstreetmap.org/){: target=_blank} (Interactive Forum)
-* [開發者常見問題](https://wiki.openstreetmap.org/wiki/Developer_FAQ){: target=_blank} (Developer FAQ)
-* [主要常見問題](https://wiki.openstreetmap.org/wiki/FAQ){: target=_blank} (Main FAQ)
+* [OpenStreetMap IRC](https://irc.openstreetmap.org/){: target=_blank}（Internet Relay Chat）：24 小時即時 OSM 聊天（使用 `#osm` 或 `#osm-dev` 頻道）
+* [互動論壇](http://community.openstreetmap.org/){: target=_blank}
+* [開發者常見問題](https://wiki.openstreetmap.org/wiki/Developer_FAQ){: target=_blank}
+* [主要常見問題](https://wiki.openstreetmap.org/wiki/FAQ){: target=_blank}
 
-## 其他轉換使用開放街圖的教學文
+## 其他轉換到 OSM 的教學
 
-* [使用 MapBox 與 Leaflet](http://developmentseed.org/blog/2012/jan/12/open-source-with-leaflet-and-mapbox/){: target=_blank} (Using MapBox and Leaflet, Development Seed)
-* [Kelso 製圖指南](https://github.com/nvkelso/geo-how-to/wiki){: target=_blank}(Kelso Cartography guide)
-* [使用 MapServer 架設伺服器](http://trac.osgeo.org/mapserver/wiki/RenderingOsmDataUbuntu){: target=_blank} (Build a server using MapServer)
+* [使用 MapBox 和 Leaflet](http://developmentseed.org/blog/2012/jan/12/open-source-with-leaflet-and-mapbox/){: target=_blank}（Development Seed）
+* [Kelso 製圖指南](https://github.com/nvkelso/geo-how-to/wiki){: target=_blank}
+* [使用 MapServer 架設伺服器](http://trac.osgeo.org/mapserver/wiki/RenderingOsmDataUbuntu){: target=_blank}
 
 ## 編輯開放街圖
 
-* [LearnOSM.org](http://www.learnosm.org/){: target=_blank} 針對初學者的指南
+* [LearnOSM.org](http://www.learnosm.org/){: target=_blank} 新手指南
 
 ## 書籍
 
-* [開放街圖：使用與強化全球的自由地圖](http://openstreetmap.info/){: target=_blank} （OpenStreetMap: Using and Enhancing the Free Map of the World，英文／德文）
-* [開放街圖：做自己的製圖家](https://www.packtpub.com/openstreetmap/book){: target=_blank} （OpenStreetMap: Be Your Own Cartographer，英文）
-* [開放街圖：新手指南](http://en.flossmanuals.net/openstreetmap/){: target=_blank} (OpenStreetMap: A Beginner’s Guide, English/French)（英文／法文）
-* [OpenLayers 2.10 新手指南](https://www.packtpub.com/openlayers-2-1-javascript-web-mapping-library-beginners-guide/book){: target=_blank} (OpenLayers 2.10 Beginners Guide, English)（英文）
-
+* [OpenStreetMap: Using and Enhancing the Free Map of the World](http://openstreetmap.info/){: target=_blank}（英文／德文）
+* [OpenStreetMap: Be Your Own Cartographer](https://www.packtpub.com/openstreetmap/book){: target=_blank}（英文）
+* [OpenStreetMap: A Beginner’s Guide](http://en.flossmanuals.net/openstreetmap/){: target=_blank}（英文／法文）
+* [OpenLayers 2.10 Beginners Guide](https://www.packtpub.com/openlayers-2-1-javascript-web-mapping-library-beginners-guide/book){: target=_blank}（英文）
 
 ## 社群資源
 
-* [開放街圖基金會](https://osmfoundation.org/){: target=_blank} (OpenStreetMap Foundation)
-* [wiki 專案](https://wiki.openstreetmap.org/){: target=_blank} (Project wiki)
-* [郵件論壇](https://lists.openstreetmap.org/listinfo){: target=_blank} (Mailing lists, searchable archive)（封存可搜尋）
+* [開放街圖基金會（OpenStreetMap Foundation）](https://osmfoundation.org/){: target=_blank}
+* [專案 Wiki](https://wiki.openstreetmap.org/){: target=_blank}
+* [郵寄清單](https://lists.openstreetmap.org/listinfo){: target=_blank}（可搜尋的封存）
 
-## 媒體詢問
+## 媒體聯繫
 
-請聯繫開放街圖基金會[溝通工作小組](https://osmfoundation.org/wiki/Communication_Working_Group#Get_in_touch){: target=_blank}.
+請聯絡 OSM 基金會的[通訊工作小組](https://osmfoundation.org/wiki/Communication_Working_Group#Get_in_touch){: target=_blank}。
 
 # 關於 switch2osm
 
-Switch2osm 是由社群驅動，由 [Richard Fairhurst](http://www.systemed.net/){: target=_blank} 和 [Paul Norman](http://www.paulnorman.ca/){: target=_blank} 發起，並獲得開放街圖社群大力協助下進行。你可以[在 GitHub 上參與](https://github.com/switch2osm/switch2osm.github.io){: target=_blank}。
+Switch2osm 是社群推動的網站，由 [Richard Fairhurst](http://www.systemed.net/){: target=_blank} 和 [Paul Norman](http://www.paulnorman.ca/){: target=_blank} 統籌，並獲得開放街圖社群大力協助。你可以[在 GitHub 上參與](https://github.com/switch2osm/switch2osm.github.io){: target=_blank}。
 
-有任何意見或建議嗎？請優先透過 IRC 聯繫。
+有意見或建議嗎？請優先透過 IRC 聯繫。
