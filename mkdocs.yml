@@ -250,7 +250,7 @@ plugins:
             Updating: 隨開放街圖編輯同步更新你的資料庫
             Other: 其他用途
             Providers: 服務供應商
-            More: 了解更多
+            More: 取得協助
         - locale: "null"
           fixed_link: https://github.com/switch2osm/switch2osm/#translation
           name: Help to translate
