@@ -7,6 +7,7 @@ lang: zh-TW
 # {{ title }}
 
 ## Nestoria.com
+
 > 「OSM 地圖的品質不輸任何主流地圖服務，甚至更好。如今在 OSM 周圍已發展出一整套完善的工具與服務，使我們得以進行更換。種種因素加在一起，讓我們深信現在正是更換的時機。」
 
 閱讀 [Nestoria 從 Google 地圖轉換為開放街圖的故事](http://blog.nestoria.co.uk/post/43883369968/why-and-how-weve-switched-away-from-google-ma){: target=blank}。
