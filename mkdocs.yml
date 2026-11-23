@@ -235,7 +235,7 @@ plugins:
           nav_translations:
             Home: Switch2OSM
             Why: 為什麼要轉換？
-            Cases: 案例分析
+            Cases: 案例分享
             Basics: 基礎概念
             Using: 使用圖磚
             Leaflet: 開始使用 Leaflet
