@@ -8,19 +8,19 @@ lang: zh-TW
 
 ## 挑戰
 
-你目前的地圖服務供應商給你兩樣東西：
+你目前的地圖服務供應商會提供給你兩樣東西：
 
 * 一組 `tiles`（正方形地圖影像，即圖磚），拼接在一起組成地圖
 * 一套 JavaScript API，或行動應用程式的同等函式庫，用來檢視圖磚
 
-要轉換到開放街圖（OpenStreetMap），你需要替換這兩者。
+要轉換到開放街圖（OpenStreetMap，OSM），你需要替換這兩者。
 
 ## 圖磚
 
 ![圖磚](/assets/img/tiles.webp){ align=left .off-glb }
-地圖圖磚（通常）是每張 256 x 256 像素的影像，從地圖資料庫繪製（「渲染」）而成。
+地圖圖磚是從地圖資料庫繪製（「渲染」）而成，通常會是每張 256 x 256 像素的影像。
 
-如果你目前使用 Google 地圖，你用的是託管在 google.com 上的 Google 地圖圖磚。由於開放街圖基金會（OpenStreetMap Foundation）是資源有限的非營利組織，你不能直接改用 openstreetmap.org 的圖磚來替代（請參閱[圖磚使用政策](https://operations.osmfoundation.org/policies/tiles/){: target=blank}）。你可以改為：
+若你目前使用 Google 地圖，你所使用的即是託管於 google.com 的 Google 地圖圖磚。由於開放街圖基金會（OpenStreetMap Foundation，OSMF）是資源有限的非營利組織，你不應直接改用 openstreetmap.org 的圖磚來替代（請參閱[圖磚使用政策](https://operations.osmfoundation.org/policies/tiles/){: target=blank}）。你可以改為：
 
 * 下載免費的 OSM 地圖資料庫並自行渲染，產生自己的圖磚；
 
@@ -32,7 +32,7 @@ OSM 地圖資料庫稱為 planet.osm。完整資料庫與定期更新檔皆可�
 
 ### 點陣圖磚或向量圖磚
 
-點陣圖磚與向量圖磚是呈現與供給地圖資料的兩種不同方式，各有優點與適用情境。以下說明兩者的差異，以及各自的優勢與限制。
+點陣圖磚與向量圖磚是呈現與提供地圖資料的兩種不同方式，各有優點與適用情境。以下說明兩者的差異，以及各自的優勢與限制。
 
 **點陣圖磚**
 
@@ -76,15 +76,15 @@ OSM 地圖資料庫稱為 planet.osm。完整資料庫與定期更新檔皆可�
 
 沒有單一的標準函式庫：你可以選擇最符合需求的。顯示 OSM 圖磚最熱門的兩個 JavaScript 函式庫是：
 
-* OpenLayers——功能強大且歷史悠久
+* OpenLayers —— 功能強大且歷史悠久
 
-* Leaflet——輕巧且容易上手
+* Leaflet —— 輕巧且容易上手
 
-行動平台也有可用的 API，例如 [Route-Me](https://github.com/route-me/route-me){: target=blank}（iOS）和 [osmdroid](https://github.com/osmdroid/osmdroid){: target=blank}（Android）。
+行動平台也有可用的 API，例如 [Route-Me](https://github.com/route-me/route-me){: target=blank}（iOS）與 [osmdroid](https://github.com/osmdroid/osmdroid){: target=blank}（Android）。
 
 ## 授權條款
 
-與商業服務供應商的資料不同，開放街圖是「開放資料」。地圖資料免費提供給你，並可自由複製與修改。OSM 的授權條款是[開放資料庫授權條款（ODbL）](http://opendatacommons.org/licenses/odbl/summary/){: target=blank}。
+OSM 與商業服務供應商的資料不同，屬於「開放資料」。地圖資料免費提供，並可自由複製與修改。OSM 透過[開放資料庫授權條款（ODbL）](http://opendatacommons.org/licenses/odbl/summary/){: target=blank}授權。
 
 你的義務是：
 

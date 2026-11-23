@@ -14,7 +14,7 @@ lang: zh-TW
 
 ## 自架圖磚適合你嗎？
 
-產生和提供圖磚都很吃硬體資源，如果要涵蓋全球並定期更新，對硬體的要求更高。
+產生與提供圖磚都需要相當多的硬體資源；若要涵蓋全球並定期更新，需求更高。
 
 如果你要架設自己的圖磚伺服器，我們建議使用 [Ubuntu Linux](https://ubuntu.com/){: target=_blank} 或 [Debian](https://www.debian.org/releases/){: target=_blank}。
 

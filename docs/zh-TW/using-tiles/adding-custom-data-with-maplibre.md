@@ -11,7 +11,7 @@ title: 使用 MapLibre GL 加入自訂資料
 
 ## 建立含有地圖的頁面
 
-請先依照[開始使用 MapLibre](/using-tiles/getting-started-with-maplibre.md)的步驟操作。這樣我們會有一個起點：含有建置腳本的 `style` 資料夾，以及可以複製到網站主機的 `release` 資料夾。
+請先依照[開始使用 MapLibre](/using-tiles/getting-started-with-maplibre.md)的步驟操作。完成後就有了起點：含有建置腳本的 `style` 資料夾，以及可以複製到網站主機的 `release` 資料夾。
 
 !!! info "網站託管"
     部分瀏覽器功能只有在頁面來自安全的位置時才能運作，例如使用 HTTPS 的網站或你的電腦。以下假設你有一台「example.com」網站主機，具備靜態檔案託管功能，且熟悉如何將檔案上傳至該主機。
@@ -22,7 +22,7 @@ title: 使用 MapLibre GL 加入自訂資料
 
 ## 下載資料
 
-一開始我們只載入少量測試資料。雖然也有其他下載來源，但 `download.geofabrik.de` 提供了很多選擇。本範例會下載英格蘭的資料，目前大約 1.5 GB。
+一開始我們只載入少量測試資料。可以下載的地方很多，其中 `download.geofabrik.de` 的選擇相當豐富。本範例會下載英格蘭的資料，目前大約 1.5 GB。
 
 ```sh
 cd ~/style
@@ -122,7 +122,7 @@ function way_function(node)
 end
 ```
 
-將以上內容合併，就得到要另存為 `~/style/` 資料夾中 `trees.lua` 的檔案：
+將以上內容合併後，另存為 `~/style/` 資料夾中的 `trees.lua`：
 
 
 ```lua title="trees.lua"
@@ -142,7 +142,7 @@ docker run -it --rm -v ~/style:/style ghcr.io/systemed/tilemaker:master --config
 
 ## 修改樣式
 
-要顯示這些新資料，必須編輯樣式。MapLibre 樣式由中繼資料、來源清單與圖層清單組成。每個圖層都有 ID、指定使用的來源，並包含樣式指示。由於[MapLibre 樣式的完整指南](https://maplibre.org/maplibre-style-spec/)超出本教學範圍，這裡只做幾項簡單的修改。
+要顯示這些新資料，必須編輯樣式。MapLibre 樣式由中繼資料、來源清單與圖層清單組成。每個圖層都有 ID、指定使用的來源，並包含樣式設定。由於[MapLibre 樣式的完整指南](https://maplibre.org/maplibre-style-spec/)超出本教學範圍，這裡只做幾項簡單的修改。
 
 我們會用文字編輯器修改 `style.json` 檔案。
 
@@ -155,7 +155,7 @@ docker run -it --rm -v ~/style:/style ghcr.io/systemed/tilemaker:master --config
 }
 ```
 
-接著要加入森林。先找到 `"id": "land-forest"` 的圖層。由於樹木改用我們自己的來源，所以要在 style.json 檔案中移除這個圖層並加以取代。
+接著要加入森林。先找到 `"id": "land-forest"` 的圖層。由於樹木改用我們自己的來源，要在 `style.json` 中移除這個圖層並加以取代。
 
 原本的圖層是：
 

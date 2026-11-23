@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 案例分析
+title: 案例分享
 lang: zh-TW
 ---
 

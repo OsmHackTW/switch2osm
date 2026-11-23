@@ -14,12 +14,12 @@ lang: zh-TW
 * [Osmium](http://wiki.openstreetmap.org/wiki/Osmium){: target=_blank} 是快速普及的彈性框架，提供高度可設定的 Osmosis 替代方案。
 * [Mapbox Studio](https://www.mapbox.com/mapbox-studio/){: target=_blank} 是一套產生「向量圖磚」的工具，可在伺服器端或用戶端渲染。
 
-## 地理編碼服務
+## 地理編碼（Geocoding）服務
 
 * [Gisgraphy](https://www.gisgraphy.com){: target=_blank} 是開放原始碼的地理編碼器，提供正向與反向地理編碼的 API／網路服務，支援自動完成、內插、位置偏好與附近搜尋，皆可離線執行或使用託管方案。它提供開放街圖的匯入工具，也支援 Openadresses、Geonames 等資料來源。
 * [Nominatim](https://nominatim.org){: target=_blank} 是開放街圖地理編碼服務（地名 ↔ 經緯度）背後的軟體。
 * [OpenCage](https://opencagedata.com/){: target=_blank} 提供整合 Nominatim 與其他開放來源的地理編碼 API。
-* [OSMNames](https://osmnames.org/){: target=_blank}——來自開放街圖的地名。可下載、已排序，附邊界框與階層，可直接用於地理編碼。
+* [OSMNames](https://osmnames.org/){: target=_blank} —— 來自開放街圖的地名。可下載、已排序，附邊界框與階層，可直接用於地理編碼。
 
 ## 路線規劃引擎與服務
 
@@ -31,9 +31,9 @@ lang: zh-TW
 
 ## 向量地圖函式庫（行動裝置）
 
-* Android 函式庫包括 [MapLibre Android SDK](https://maplibre.org/projects/maplibre-native/){: target=_blank}、[Mapbox Android SDK](https://www.mapbox.com/android-sdk/){: target=_blank}、[mapsforge](http://mapsforge.org/){: target=_blank}、[Nutiteq Maps SDK](https://developer.nutiteq.com/){: target=_blank}、[Skobbler Android SDK](http://developer.skobbler.com/){: target=_blank} 和 [Tangram ES](https://github.com/tangrams/tangram-es/){: target=_blank}。
+* Android 函式庫包括 [MapLibre Android SDK](https://maplibre.org/projects/maplibre-native/){: target=_blank}、[Mapbox Android SDK](https://www.mapbox.com/android-sdk/){: target=_blank}、[mapsforge](http://mapsforge.org/){: target=_blank}、[Nutiteq Maps SDK](https://developer.nutiteq.com/){: target=_blank}、[Skobbler Android SDK](http://developer.skobbler.com/){: target=_blank} 以及 [Tangram ES](https://github.com/tangrams/tangram-es/){: target=_blank}。
 
-* iOS 函式庫包括 [MapLibre iOS SDK](https://maplibre.org/projects/maplibre-native/){: target=_blank}、[Mapbox iOS SDK](https://www.mapbox.com/ios-sdk/){: target=_blank}、[Nutiteq Maps SDK](https://developer.nutiteq.com/){: target=_blank}、[Skobbler iOS SDK](http://developer.skobbler.com/){: target=_blank} 和 [Tangram ES](https://github.com/tangrams/tangram-es/){: target=_blank}。
+* iOS 函式庫包括 [MapLibre iOS SDK](https://maplibre.org/projects/maplibre-native/){: target=_blank}、[Mapbox iOS SDK](https://www.mapbox.com/ios-sdk/){: target=_blank}、[Nutiteq Maps SDK](https://developer.nutiteq.com/){: target=_blank}、[Skobbler iOS SDK](http://developer.skobbler.com/){: target=_blank} 以及 [Tangram ES](https://github.com/tangrams/tangram-es/){: target=_blank}。
 
 ## 向量地圖函式庫（網頁）
 

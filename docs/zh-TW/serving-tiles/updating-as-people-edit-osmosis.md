@@ -6,9 +6,9 @@ lang: zh-TW
 
 # 使用 Osmosis 隨開放街圖編輯同步更新你的資料庫
 
-每天都有數以百萬計的地圖更新；為了不讓地圖「過時」，可以定期更新用來產生地圖圖磚的資料。
+每日都有數以百萬計的地圖更新；為了不讓地圖「過時」，可以定期更新用來產生地圖圖磚的資料。
 
-如果你使用的是近期版本的 osm2pgsql（1.4.2 或以上版本），或許可以改用[新的](/serving-tiles/updating-as-people-edit-osm2pgsql-replication.md)說明。如果想使用與下載區域完全吻合的更新來源（例如 Geofabrik 為自家下載區域提供的每日更新），那份說明特別有用。如果無法用 `osm2pgsql` 做同步更新，請繼續往下看……
+若你使用的是近期版本的 osm2pgsql（1.4.2 以上），可以改參考[新版說明](/serving-tiles/updating-as-people-edit-osm2pgsql-replication.md)。若需要與下載區域完全吻合的更新來源（例如 Geofabrik 為其下載區域提供的每日更新），該份說明文件尤其合適。如果無法使用 `osm2pgsql` 進行同步更新，請繼續閱讀下文。
 
 這裡使用 `osmosis`，安裝時會一併裝好 Java。`osmosis` 是通用的 OSM 資料工具，其中一項功能就是用 OSM 的最新變更更新資料庫。其他選擇還有 `osmium` 等。
 
@@ -54,7 +54,7 @@ ACCOUNT=renderaccount
 
 另外也請確認腳本中沒有 `-e$EXPIRY_METAZOOM:$EXPIRY_METAZOOM`。如果有，請把 `:` 改成 `-`：`-e$EXPIRY_METAZOOM-$EXPIRY_METAZOOM`。
 
-另外，你可能需要編輯 OSM2PGSQL_OPTIONS，讓它符合匯入資料庫時所用的資料庫類型與 Lua 標籤轉換腳本；如果是 `pgsql`，還要符合決定建立哪些欄位的 `.style` 檔案。依建立資料庫時使用的參數不同，這裡可能還要再傳入其他參數。當然，請把 `/path/to/` 改成實際路徑：
+另外，你可能需要編輯 OSM2PGSQL_OPTIONS，讓它符合匯入資料庫時所用的資料庫類型與 Lua 標籤轉換腳本；如果是 `pgsql`，還要符合決定建立哪些欄位的 `.style` 檔案。依建立資料庫時使用的參數不同，這裡可能還要再傳入其他參數。請將 `/path/to/` 改成實際路徑：
 
 （`pgsql`）
 
@@ -145,7 +145,7 @@ sudo -u _renderd crontab -e
 
 ## 更新可能遇到的問題
 
-如果 `/var/log/tiles/run.log` 中出現「Expiry failed」之類的錯誤，可能是腳本中呼叫的程式之一 `render_expired` 記憶體不足。如果是這樣，請調低腳本中的 `EXPIRY_MAXZOOM`，直到可以正常運作。你可以從 `/var/log/tiles/` 中的其他檔案取得更多錯誤細節。
+如果 `/var/log/tiles/run.log` 中出現「Expiry failed」之類的錯誤，可能是腳本呼叫的 `render_expired` 記憶體不足。如果是這樣，請調低腳本中的 `EXPIRY_MAXZOOM`，直到可以正常運作。你可以從 `/var/log/tiles/` 中的其他檔案取得更多錯誤細節。
 
 如果出現「rm: cannot remove '/var/lib/mod_tile/dirty_tiles.6877':」之類的錯誤，可能表示 `osm2pgsql` 執行失敗，結束時沒有產生髒圖磚清單。它的記錄檔位置定義在腳本前段，預設為 `/var/log/tiles/osm2pgsql.log`，查看這個檔案應該就能找到實際的錯誤。
 

@@ -6,17 +6,17 @@ lang: zh-TW
 
 # {{ title }}
 
-如果你只是想試試看，或用的是 Ubuntu 以外的作業系統，並以 Docker 做容器化，可以試試[這個專案](https://github.com/Overv/openstreetmap-tile-server){: target=_blank}（感謝該專案的所有貢獻者）。它以[這份說明](/serving-tiles/manually-building-a-tile-server-ubuntu-22-04-lts.md)為基礎，是可以直接安裝的預建容器。
+如果你只是想牛刀小試、一睹為快；又或者使用 Ubuntu 以外的作業系統並以 Docker 作容器化，可以試試[這個專案](https://github.com/Overv/openstreetmap-tile-server){: target=_blank}（感謝該專案的所有貢獻者）。該專案是基於[Ubuntu 22.04 手動架設說明](/serving-tiles/manually-building-a-tile-server-ubuntu-22-04-lts.md)建立的預建容器，可即裝即用。
 
 ## Docker
 
 如果你尚未安裝 Docker，網路上有許多教學，例如[這篇](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-debian-10){: target=_blank}。
 
-即使只是小型的節選資料，也需要約 30GB 的硬碟空間，因為匯入資料庫的全球邊界資料相當龐大。
+由於匯入資料庫的全球邊界資料相當龐大，因此即使只是小型的節選資料，也需要約 30GB 的硬碟空間。
 
 ## 開放街圖資料
 
-這個範例會下載尚比亞的資料並匯入，不過任何 OSM .pbf 檔案應該都可以。測試時請先用小的 .pbf 檔案。以執行 Docker 的非 root 使用者登入後，下載尚比亞的資料：
+本範例會下載尚比亞（Zambia）的資料並匯入，不過任何 OSM .pbf 檔案的步驟應大同小異。測試時我們建議先用較小的 .pbf 檔案。以執行 Docker 的非 root 使用者登入後，下載尚比亞的資料：
 
 ```sh
 cd
@@ -39,7 +39,7 @@ time \
     overv/openstreetmap-tile-server import
 ```
 
-資料檔必須用絕對路徑，不能用相對路徑。這個範例的檔案位於「renderaccount」使用者的家目錄。另外，如果出了問題，需要執行「docker volume rm osm-data」，再從上方的「docker volume create osm-data」重新開始。流程結束時，你應該會看到：
+資料檔必須使用絕對路徑，不能用相對路徑。本範例的檔案位於「renderaccount」使用者的家目錄。若過程出錯，需先執行「docker volume rm osm-data」，再從上方的「docker volume create osm-data」重新開始。完成後，你應該會看到以下的訊息：
 
 ```sh
 INFO:root: Import complete
@@ -57,13 +57,13 @@ INFO:root: Import complete
 createuser: error: creation of new role failed: ERROR: role "renderer" already exists
 ```
 
-就表示出了問題：先用「docker ps -a」找出失敗的容器，再用「docker rm」（後接容器 ID）刪除，然後依上述方式刪除並重新建立「osm-data」。
+就表示出現錯誤：先用「docker ps -a」找出失敗的容器，再用「docker rm」（後接容器 ID）刪除，然後依上述方式刪除並重新建立「osm-data」。
 
-所需時間主要取決於本地網路速度與載入區域的大小。這個範例使用的尚比亞範圍相對較小。
+所需時間主要取決於本地網路速度與載入區域的大小。本範例使用的尚比亞範圍相對較小。
 
-注意出錯時的錯誤訊息可能有些難懂，而且可惜的是，匯入流程失敗後無法接續執行。另外，較新版本的 Docker 容器可能使用較新版本的 postgres，因此用舊版本建立的「osm-data」可能無法使用——你可能需要用「docker volume rm osm-data」移除後重新建立。
+出錯時的錯誤訊息可能有些難懂，而且匯入流程失敗後無法接續執行。此外，新版 Docker 容器可能改用較新的 postgres，舊版建立的「osm-data」或許無法沿用，需用「docker volume rm osm-data」移除後重建。
 
-如果想進一步了解它實際做了哪些事，請參考[這個檔案](https://github.com/Overv/openstreetmap-tile-server/blob/master/Dockerfile){: target=_blank}。你會發現它與[這裡](/serving-tiles/manually-building-a-tile-server-ubuntu-22-04-lts.md)的「手動架設圖磚伺服器」說明非常接近，只有些微差異，例如圖磚 URL 與使用的內部帳號。從內部可以看出它使用的是 Ubuntu 22.04。你不需要直接操作容器內部，但想進去看看也可以（用「docker exec -it mycontainernumber bash」）。
+想進一步了解容器實際做了哪些事，請參考[這個檔案](https://github.com/Overv/openstreetmap-tile-server/blob/master/Dockerfile){: target=_blank}。它的步驟與[手動架設圖磚伺服器](/serving-tiles/manually-building-a-tile-server-ubuntu-22-04-lts.md)的說明大致相同，只在圖磚 URL、內部帳號等細節上略有差異。容器基於 Ubuntu 22.04，通常不必進入操作；如有需要，可執行 `docker exec -it mycontainernumber bash`。
 
 啟動圖磚伺服器：
 
@@ -75,7 +75,7 @@ docker run \
     run
 ```
 
-要確認是否正常運作，請開啟新的無痕視窗並前往：
+要確認是否正常運作，請在瀏覽器開啟新的無痕視窗並前往：
 
 `http://your.server.ip.address:8080/tile/0/0/0.png`
 
@@ -87,7 +87,7 @@ docker run \
 
 ### 更多資訊
 
-這個 docker 容器支援的功能其實比這裡的簡單範例多得多——關於更新、效能調校等更多細節，請參閱 [readme](https://github.com/Overv/openstreetmap-tile-server/blob/master/README.md){: target=_blank}。
+這個 Docker 容器的功能遠比這個簡單範例多 —— 關於更新、效能調校等更多細節，請參閱 [readme](https://github.com/Overv/openstreetmap-tile-server/blob/master/README.md){: target=_blank}。
 
 ### 檢視圖磚
 

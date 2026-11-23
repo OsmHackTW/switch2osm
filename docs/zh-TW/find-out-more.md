@@ -32,13 +32,13 @@ lang: zh-TW
 
 ## 社群資源
 
-* [開放街圖基金會（OpenStreetMap Foundation）](https://osmfoundation.org/){: target=_blank}
+* [開放街圖基金會（OpenStreetMap Foundation，OSMF）](https://osmfoundation.org/){: target=_blank}
 * [專案 Wiki](https://wiki.openstreetmap.org/){: target=_blank}
 * [郵寄清單](https://lists.openstreetmap.org/listinfo){: target=_blank}（可搜尋的封存）
 
 ## 媒體聯繫
 
-請聯絡 OSM 基金會的[通訊工作小組](https://osmfoundation.org/wiki/Communication_Working_Group#Get_in_touch){: target=_blank}。
+請聯絡開放街圖基金會的[通訊工作小組](https://osmfoundation.org/wiki/Communication_Working_Group#Get_in_touch){: target=_blank}。
 
 # 關於 switch2osm
 

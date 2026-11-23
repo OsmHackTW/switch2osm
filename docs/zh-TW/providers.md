@@ -6,9 +6,9 @@ lang: zh-TW
 
 # {{ title }}
 
-## 開發服務與顧問
+## 開發與顧問諮詢服務
 
-以下公司為有意轉換到開放街圖（OpenStreetMap）的網站，提供開發與顧問服務。
+以下供應商為有意轉換到開放街圖（OpenStreetMap，OSM）的網站與應用程式，提供開發與顧問諮詢服務。
 
 * [Alantgeo](https://www.alantgeo.com.au){: target=_blank}，澳洲
 * [Camptocamp](https://camptocamp.com/){: target=_blank}，瑞士
@@ -32,9 +32,9 @@ lang: zh-TW
 
 ## 圖磚託管
 
-以下公司提供開放街圖圖磚託管服務。
+以下供應商代為產生並提供開箱即用（OOTB）的 OSM 地圖圖磚，無需自行維護即可快速載入地圖。
 
-### 提供免費使用
+### 提供免費方案
 
 * [Carto](https://carto.com/){: target=_blank}，美國
 * [Geoapify](https://www.geoapify.com/api/map-tiles/){: target=_blank}，德國

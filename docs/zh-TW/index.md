@@ -14,9 +14,9 @@ hide:
 
 你的地圖看起來和其他人的都一樣嗎？你是否只為了在網站上放地圖，就支付高昂的費用？
 
-轉換到開放街圖（OpenStreetMap），探索如何用全世界最好的地圖資料打造美麗的地圖。
+轉換到開放街圖（OpenStreetMap，OSM），探索如何用全世界最好的地圖資料打造美麗的地圖。
 
-[使用圖磚](/using-tiles/index.md){ .md-button .md-button--primary } [供給圖磚](/serving-tiles/index.md){ .md-button }
+[使用圖磚](/using-tiles/index.md){ .md-button .md-button--primary } [自架圖磚](/serving-tiles/index.md){ .md-button }
 
 ///
 
@@ -34,11 +34,11 @@ hide:
 
 /// html | div.column.main
 
-我們免費提供資料，你可以用它製作任何想要的地圖，或借助已在使用開放街圖的專家經驗。
+OSM 圖資完全免費且開放，你可以自由運用它來創作任何地圖作品，或借鏡眾多使用者運用 OSM 所累積的實務經驗。
 
-不論架設在自己的硬體上還是其他地方都可以，一切由你掌控。
+無論是架設於自有硬體還是其他平台，一切皆由你掌控。
 
-[Switch2OSM](#) 說明如何轉換——從基本原理到技術操作。
+[Switch2OSM](#) 說明如何轉換 —— 從基本原理到技術操作。
 ///
 
 ////

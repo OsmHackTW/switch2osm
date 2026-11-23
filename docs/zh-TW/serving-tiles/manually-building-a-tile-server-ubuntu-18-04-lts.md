@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: 手動架設圖磚伺服器（18.04 LTS）
+title: 手動架設圖磚伺服器（Ubuntu 18.04 LTS）
 dist: Ubuntu 18.04
 dl_timestamp: "2017-02-26T21:43:02Z"
 lang: zh-TW
@@ -9,17 +9,17 @@ lang: zh-TW
 # {{ title }}
 
 !!! info ""
-    本頁說明如何安裝與設定執行自有圖磚伺服器所需的全部軟體。這份逐步教學以 [Ubuntu Linux](https://ubuntu.com/){: target=_blank} 18.04 LTS（Bionic Beaver）撰寫，並於 2020 年 5 月測試。
+    本頁說明如何安裝與設定執行自有圖磚伺服器所需的全部軟體。本教學針對 [Ubuntu Linux](https://ubuntu.com/){: target=_blank} 18.04 LTS（Bionic Beaver）撰寫，並於 2020 年 5 月測試。
 
 ## 軟體安裝
 
-OSM 圖磚伺服器堆疊是一組相互搭配、共同組成圖磚伺服器的程式與函式庫。和開放街圖（OpenStreetMap）的許多事情一樣，要達成這個目標有很多方法，而且幾乎每個元件都有各具優缺點的替代方案。本教學介紹的是最標準的版本，與 OpenStreetMap.org 主要圖磚伺服器所使用的架構相近。
+OSM 圖磚伺服器堆疊（Stack）是一組相互搭配、共同組成圖磚伺服器的程式與函式庫。如同開放街圖的眾多面向，要達成這個目標有很多方法，而且幾乎每個元件都有各具優缺點的替代方案。本教學介紹的是最標準的版本，與 OpenStreetMap.org 主要圖磚伺服器所使用的架構相近。
 
 這套堆疊由 5 個主要元件組成：`mod_tile`、`renderd`、`mapnik`、`osm2pgsql` 以及 `postgresql/postgis` 資料庫。Mod_tile 是 Apache 模組，負責提供已快取的圖磚，並判斷哪些圖磚需要重新渲染，原因可能是尚未快取，或是已經過時。Renderd 為不同類型的請求提供優先佇列系統，用來管理並分散渲染請求帶來的負載。Mapnik 則是實際負責渲染的軟體函式庫，供 renderd 呼叫。
 
 注意本教學是在全新安裝的 {{ dist }} 伺服器上撰寫並測試。如果你已經安裝了某些軟體的其他版本（例如從舊版 Ubuntu 升級，或另外設定了 PPA 來源），可能需要自行做些調整。
 
-本教學假設你以非 root 使用者搭配 `sudo` 執行所有操作。下文預設使用的非 root 使用者名稱是 `renderaccount`，你可以在本機建立這個帳號，也可以修改腳本改用其他使用者名稱。如果建立了 `renderaccount` 使用者，要把它加入可以 `sudo` 成 root 的群組。在你平常使用的非 root 帳號下執行：
+本教學假設你以非 root 帳號搭配 `sudo` 執行所有操作，並預設帳號名稱為 `renderaccount`。你可以在本機建立此帳號，或修改腳本改用其他名稱。若建立了 `renderaccount`，需將它加入可 sudo 成 root 的群組。請在你平常使用的非 root 帳號下執行：
 
 ```sh
 sudo -i
@@ -48,9 +48,9 @@ sudo apt-get install \
     postgresql-10-postgis-scripts
 ```
 
-這裡 `postgresql` 是用來儲存地圖資料的資料庫，`postgis` 則為它加上額外的空間資料支援。同樣回答 yes 即可安裝。
+其中 `postgresql` 是用來儲存地圖資料的資料庫，`postgis` 則為它加上額外的空間資料支援。同樣回答 yes 即可安裝。
 
-接著要建立 postgis 資料庫。許多程式的預設值都假設資料庫名稱是 `gis`，本教學也沿用這個慣例，不過這不是必要的。下文中的 `renderaccount` 請換成你的使用者名稱，也就是之後要用 Mapnik 渲染地圖的使用者。
+接著要建立 postgis 資料庫。許多程式的預設值都假設資料庫名稱是 `gis`，本教學也沿用這個慣例，但並非必要。下文中的 `renderaccount` 請換成你的使用者名稱，也就是之後要用 Mapnik 渲染地圖的使用者。
 
 ```sh
 sudo -u postgres -i
@@ -64,7 +64,7 @@ createdb -E UTF8 -O renderaccount gis
 psql
 ```
 
-（這會進入 `postgres=#` 提示字元）
+（會進入 `postgres=#` 提示字元）
 
 ```sh
 \c gis
@@ -100,13 +100,13 @@ ALTER TABLE spatial_ref_sys OWNER TO renderaccount;
 \q
 ```
 
-（這會離開 psql，回到一般的 Linux 提示字元）
+（會離開 psql，回到一般的 Linux 提示字元）
 
 ```sh
 exit
 ```
 
-（回到執行上面 `sudo -u postgres -i` 之前的使用者身分）
+（切回執行 `sudo -u postgres -i` 前的帳號）
 
 如果還沒有這個使用者的 Unix 帳號，也請建立一個，並在提示時設定密碼：
 
@@ -115,7 +115,7 @@ sudo useradd -m renderaccount
 sudo passwd renderaccount
 ```
 
-同樣地，請把上面的 `renderaccount` 換成你選用的非 root 使用者名稱。
+同樣地，請把上面的 `renderaccount` 換成你選用的非 root 帳號名稱。
 
 ### 安裝 osm2pgsql
 
@@ -169,7 +169,7 @@ python
 >>>
 ```
 
-如果 Python 回應第二個 `>>>` 提示字元且沒有錯誤，就表示 Python 找得到 Mapnik 函式庫。恭喜！用以下指令即可離開 Python：
+如果出現第二個 `>>>` 提示字元且沒有錯誤，就表示 Python 找得到 Mapnik 函式庫。恭喜！用以下指令即可離開 Python：
 
 ```py
 >>> quit()
@@ -177,7 +177,7 @@ python
 
 ## 安裝 mod_tile 與 renderd
 
-接下來安裝 mod_tile 與 renderd。`mod_tile` 是處理圖磚請求的 Apache 模組；`renderd` 則是常駐程式，在 `mod_tile` 提出請求時實際渲染圖磚。這裡使用 <https://github.com/SomeoneElseOSM/mod_tile>{: target=_blank} 的 `switch2osm` 分支。它分叉自 <https://github.com/openstreetmap/mod_tile>{: target=_blank}，修改後支援 {{ dist }}，另外還做了幾項變更，讓它能在一般 Ubuntu 伺服器上運作，而不限於 OSM 的渲染伺服器。
+接下來安裝 mod_tile 與 renderd。`mod_tile` 是處理圖磚請求的 Apache 模組；`renderd` 則是常駐程式，在 `mod_tile` 提出請求時實際渲染圖磚。這裡使用 <https://github.com/SomeoneElseOSM/mod_tile>{: target=_blank} 的 `switch2osm` 分支。此分支 fork 自 <https://github.com/openstreetmap/mod_tile>{: target=_blank}，除支援 {{ dist }} 外，也做了幾項修改，使其能在一般 Ubuntu 伺服器上運作，而非僅限 OSM 的渲染伺服器。
 
 ### 編譯 mod_tile 原始碼
 
@@ -200,7 +200,7 @@ cd mod_tile
 make
 ```
 
-注意這時畫面上會捲過一些「看起來令人擔心」的訊息，但結尾應該是「make[1]: Leaving directory '/home/renderaccount/src/mod_tile'」。
+這時畫面會捲過一些看似嚇人的訊息，但結尾應該是「make[1]: Leaving directory '/home/renderaccount/src/mod_tile'」。
 
 ```sh
 sudo make install
@@ -222,9 +222,9 @@ sudo ldconfig
 
 ## 樣式表設定
 
-所有必要軟體都安裝好之後，接著要下載並設定樣式表。
+所需軟體都安裝好之後，接著要下載並設定樣式表。
 
-這裡使用的樣式就是 openstreetmap.org 網站「標準」地圖所用的樣式。選擇它是因為文件完整，而且在世界各地都能正常運作（包括地名使用非拉丁文字的地區）。不過它也有些缺點：為了全球通用，設計上做了許多妥協；如果需要修改，結構也相當複雜，不容易理解。
+這裡使用的是 openstreetmap.org 網站「標準」地圖的樣式。選擇它是因為文件完整，且在世界各地都能正常運作（包括地名使用非拉丁字母的地區）。不過它也有些缺點：為求全球通用而多有取捨，結構也相當複雜，若要修改並不容易。
 
 「OpenStreetMap Carto」的官方網址是 <https://github.com/gravitystorm/openstreetmap-carto/>{: target=_blank}，安裝說明則在 <https://github.com/gravitystorm/openstreetmap-carto/blob/master/INSTALL.md>{: target=_blank}，不過本教學會涵蓋所有必要步驟。
 
@@ -262,13 +262,13 @@ carto 1.2.0 (Carto map stylesheet compiler)
 carto project.mml > mapnik.xml
 ```
 
-現在 `/home/renderaccount/src/openstreetmap-carto/mapnik.xml` 已經有一份 Mapnik XML 樣式表。
+現在 `/home/renderaccount/src/openstreetmap-carto/mapnik.xml` 已有一份 Mapnik XML 樣式表。
 
 ## 匯入資料
 
-一開始先只匯入少量測試資料。可以下載的地方很多，其中 `download.geofabrik.de` 的選擇相當豐富。這個範例會下載亞塞拜然的資料，目前大約 32Mb。
+一開始先只匯入少量測試資料。可以下載的地方很多，其中 `download.geofabrik.de` 的選擇相當豐富。這個範例會下載亞塞拜然（Azerbaijan）的資料，目前大約 32Mb。
 
-瀏覽 <https://download.geofabrik.de/asia/azerbaijan.html>{: target=_blank}，記下「This file was last modified」的日期（例如「{{ dl_timestamp }}」）。之後如果要把其他人對開放街圖的後續修改更新進資料庫，就會用到這個日期。下載方式如下：
+瀏覽 <https://download.geofabrik.de/asia/azerbaijan.html>{: target=_blank}，記下「This file was last modified」的日期（例如「{{ dl_timestamp }}」）。之後要將資料庫更新至最新的 OSM 編輯內容時，會用到這個日期。下載方式如下：
 
 ```sh
 mkdir ~/data
@@ -276,7 +276,7 @@ cd ~/data
 wget https://download.geofabrik.de/asia/azerbaijan-latest.osm.pbf
 ```
 
-以下指令會把剛才下載的開放街圖資料匯入資料庫。這個步驟對硬碟 I/O 的負擔很重；依硬體而定，匯入整個地球可能要花好幾個小時、好幾天甚至好幾週。較小的節選資料匯入起來會快很多，你也可能需要試試不同的 `-C` 值，配合機器可用的記憶體。
+下列指令會把剛才下載的開放街圖資料匯入資料庫。此步驟的磁碟 I/O 負載極高，匯入全球資料可能需要數小時、數天甚至數週，視硬體而定；較小的節選資料則快上許多。你可能需要依機器的可用記憶體調整 `-C` 值。
 
 ```sh
 osm2pgsql -d gis --create --slim  -G --hstore \
@@ -287,7 +287,7 @@ osm2pgsql -d gis --create --slim  -G --hstore \
     ~/data/azerbaijan-latest.osm.pbf
 ```
 
-以下稍微說明這些選項的意義：
+各選項說明如下：
 
 `-d gis`
 : 要操作的資料庫（`gis` 過去是預設值，現在必須明確指定）。
@@ -296,7 +296,7 @@ osm2pgsql -d gis --create --slim  -G --hstore \
 : 將資料匯入空的資料庫，而不是附加到現有資料庫。
 
 `--slim`
-: osm2pgsql 可以使用不同的資料表結構；「slim」資料表適用於渲染。
+: osm2pgsql 支援多種資料表結構，`slim` 適用於渲染。
 
 `-G`
 : 決定多重多邊形的處理方式。
@@ -305,16 +305,16 @@ osm2pgsql -d gis --create --slim  -G --hstore \
 : 讓沒有對應資料庫欄位的標籤也能用於渲染。
 
 `--tag-transform-script ~/src/openstreetmap-carto/openstreetmap-carto.lua`
-: 指定用來處理標籤的 Lua 腳本。這是在樣式處理 OSM 標籤之前先行處理標籤的簡便方法，有機會讓樣式邏輯簡化許多。
+: 指定處理標籤所用的 Lua 腳本。可在樣式處理 OSM 標籤前先行整理，大幅簡化樣式邏輯。
 
 `-C 2500`
-: 為 osm2pgsql 匯入程序分配 2.5 Gb 記憶體。如果記憶體較少，可以試試較小的數值；如果匯入程序因記憶體不足而被終止，就需要改用更小的數值或更小的 OSM 節選資料。
+: 為 osm2pgsql 匯入程序分配 2.5 Gb 記憶體。記憶體較少時可改用較小的值；若匯入程序因記憶體不足而中止，請改用更小的值或範圍更小的節選資料。
 
 `--number-processes 1`
-: 使用 1 顆 CPU。如果有更多核心可用，可以多用一些。
+: 使用 1 個 CPU 核心；若有更多核心，可酌量增加。
 
 `-S ~/src/openstreetmap-carto/openstreetmap-carto.style`
-: 依這個檔案建立資料庫欄位（內容其實與「openstreetmap-carto」原本的相同，沒有更動）
+: 依此檔案建立資料庫欄位（與 openstreetmap-carto 原始版本相同）。
 
 `~/data/azerbaijan-latest.osm.pbf`
 : 最後一個參數是要匯入的資料檔。
@@ -323,14 +323,14 @@ osm2pgsql -d gis --create --slim  -G --hstore \
 
 ### 下載 Shapefile
 
-雖然繪製地圖用的資料大多直接來自上面下載的開放街圖資料檔，但仍需要一些 shapefile，例如低縮放等級的國界。下載並建立索引：
+地圖的大部分資料直接來自前面下載的開放街圖資料檔，但仍需要一些 shapefile，例如低縮放等級的行政邊界。下載並建立索引：
 
 ```sh
 cd ~/src/openstreetmap-carto/
 scripts/get-external-data.py
 ```
 
-這個過程要下載相當多的資料，可能需要一些時間，執行時畫面上不會顯示太多訊息。實際上它會在「openstreetmap-carto」底下建立「data」資料夾並放入資料。
+此步驟需下載大量資料，可能要花一段時間，期間畫面上不會有太多訊息。它會在「openstreetmap-carto」底下建立「data」資料夾並放入資料。
 
 ### 字型
 
@@ -347,7 +347,7 @@ scripts/get-fonts.sh
 
 ### 設定 renderd
 
-`renderd` 的設定檔是 `/usr/local/etc/renderd.conf`。用 nano 之類的文字編輯器開啟編輯：
+`renderd` 的設定檔是 `/usr/local/etc/renderd.conf`。請使用 nano 等文字編輯器開啟：
 
 ```sh
 sudo nano /usr/local/etc/renderd.conf
@@ -365,13 +365,13 @@ num_threads=4
 XML=/home/renderaccount/src/openstreetmap-carto/mapnik.xml
 ```
 
-請把 `renderaccount` 改成你上面使用的非 root 使用者名稱。
+請將 `renderaccount` 換成你先前使用的非 root 帳號名稱。
 
 ```ini
 URI=/hot/
 ```
 
-選用這個值，是為了讓這裡產生的圖磚更容易用來取代 OpenStreetMap.org 上的 HOT 圖磚圖層。你也可以改用其他值，不過用 `/hot/` 也很好。
+選用這個值，是為了讓這裡產生的圖磚更容易用來取代 OpenStreetMap.org 上的 HOT 圖磚圖層。你也可以改用其他值，`/hot/` 只是其中一種選擇。
 
 ### 設定 Apache
 
@@ -411,7 +411,7 @@ sudo a2enconf mod_tile
 sudo nano /etc/apache2/sites-available/000-default.conf
 ```
 
-在 `ServerAdmin` 與 `DocumentRoot` 兩行之間加入下列內容：
+請在 `ServerAdmin` 與 `DocumentRoot` 兩行之間加入下列內容：
 
 ```ini
 LoadTileConfigFile /usr/local/etc/renderd.conf
@@ -429,16 +429,16 @@ sudo service apache2 reload
 sudo service apache2 reload
 ```
 
-（之所以要執行兩次，我猜是因為 Apache 在執行中重新設定時會「搞混」）
+（筆者以為，之所以需要兩次，想必是 Apache 被熱改設定而「困惑」罷。譯者：也許只是過於疲憊罷。２回啊２回！（便乗））
 
 用網頁瀏覽器開啟 `http://your.server.ip.address/index.html`，應該會看到 Ubuntu / Apache 的「It works!」頁面。
 
 !!! tip
     如果不知道伺服器分配到哪個 IP 位址，通常可以用 `ifconfig` 查詢；網路設定不太複雜時，就是 `127.0.0.1` 以外的那個 `inet addr`。
 
-如果你用的是主機服務商的伺服器，內部位址很可能和分配給你的外部位址不同，但服務商應該已經把外部 IP 位址寄給你，而且很可能就是你目前連線到伺服器的位址。
+若使用主機商（如 VPS 或雲端主機）的伺服器，內部位址多半與外部位址不同；主機商應已提供外部 IP，通常就是你目前連線用的位址。
 
-注意這只是 `http`（連接埠 80）網站；要啟用 `https` 還需要額外的 Apache 設定，這超出本說明的範圍。不過如果用「Let's Encrypt」核發憑證，設定過程也能順便把 Apache 的 HTTPS 網站設定好。
+請注意，上述流程只完成 `http`（連接埠 80）網站的設定。如要啟用 `https`，還需額外設定 Apache（本文不另贅述）；若使用「Let's Encrypt」申請憑證，可一併完成 HTTPS 設定。
 
 ### 首次執行 renderd
 
@@ -467,7 +467,7 @@ sudo chmod u+x /etc/init.d/renderd
 sudo cp ~/src/mod_tile/debian/renderd.service /lib/systemd/system/
 ```
 
-`renderd.service` 是 `systemd` 服務檔，這裡的版本只是去呼叫舊式的 init 指令。測試啟動指令是否正常：
+`renderd.service` 是 `systemd` 服務檔，這裡的版本僅呼叫舊式的 init 指令。測試啟動指令是否正常：
 
 ```sh
 sudo /etc/init.d/renderd start
@@ -497,4 +497,4 @@ tail -f /var/log/syslog | grep " TILE "
 
 載入頁面時應該會看到一些圖磚請求。逐步縮小地圖時，ssh 連線中會出現新圖磚的請求。有些低縮放等級的圖磚第一次渲染可能要花很久（好幾分鐘），但完成後下次就能直接使用。
 
-恭喜！前往[使用圖磚](/using-tiles/index.md)章節，用新架好的圖磚伺服器做出一張地圖。
+恭喜！接著到[使用圖磚](/using-tiles/index.md)一節，用新架好的圖磚伺服器做出一張地圖。

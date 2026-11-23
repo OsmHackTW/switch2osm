@@ -6,15 +6,15 @@ lang: zh-TW
 
 # 使用 PyOsmium 隨開放街圖編輯同步更新你的資料庫
 
-每天都有數以百萬計的地圖更新；為了不讓地圖「過時」，可以定期更新用來產生地圖圖磚的資料。
+每日都有數以百萬計的地圖更新；為了不讓地圖「過時」，可以定期更新用來產生地圖圖磚的資料。
 
-用 osm2pgsql（1.4.2 或以上版本）來做，現在比以前容易得多。Ubuntu 22.04 與 Debian 12 以後的版本都內附合適的版本，也可以依照[這份說明](https://osm2pgsql.org/doc/install.html){: target=_blank}取得。
+自 osm2pgsql 1.4.2 起，更新資料庫相較以往已變得簡單許多。Ubuntu 22.04 與 Debian 12 以後的版本都內附合適的版本，也可以依照[這份說明](https://osm2pgsql.org/doc/install.html){: target=_blank}取得。
 
-更簡單但較不具彈性的資料庫更新方法是使用「osm2pgsql-replication」，說明請見[這裡](/serving-tiles/updating-as-people-edit-osm2pgsql-replication.md)。這個範例會使用「PyOsmium」，以 planet.openstreetmap.org 的每分鐘更新，來更新最初從 Geofabrik 匯入的資料庫。
+更簡單但較不具彈性的資料庫更新方法是使用「osm2pgsql-replication」，說明請見[這裡](/serving-tiles/updating-as-people-edit-osm2pgsql-replication.md)。這個範例會使用「PyOsmium」，將 planet.openstreetmap.org 的每分鐘更新套用到最初從 Geofabrik 匯入的資料庫。
 
 ## 確認可以看到除錯訊息
 
-這時能看到圖磚渲染程序的輸出會很有幫助，可以確認標記為髒的圖磚確實有在處理。近期的 mod_tile 版本預設關閉這項功能，開啟方式如下：
+此時最好能看到圖磚渲染程序的輸出，以確認標記為髒的圖磚確實有在處理。近期的 mod_tile 版本預設關閉這項功能，開啟方式如下：
 
 ```sh
 sudo nano /usr/lib/systemd/system/renderd.service
@@ -77,9 +77,9 @@ sudo -u _renderd pyosmium-get-changes -D 2026-06-12T20:21:15Z -f sequence.state 
 
 ## 使用「trim_osc.py」只套用特定區域的更新
 
-（選用，但如果更新的資料庫只包含地球上的某個區域，建議使用）
+（選用；若資料庫只涵蓋部分區域，建議使用）
 
-這裡使用 Zverik「regional」腳本中的「trim_osc.py」，把 OpenStreetMap.org 的更新裁剪到只剩感興趣的區域，以免 postgres 資料庫在套用更新時大幅膨脹。另外也要安裝一些相依套件。以你使用的非 root 使用者執行：
+這裡使用 Zverik「regional」腳本中的「trim_osc.py」，把 OpenStreetMap.org 的更新裁剪到只剩感興趣的區域，以免 postgres 資料庫在套用更新時大幅膨脹。另外也要安裝一些相依套件。以非 root 帳號執行：
 
 ```sh
 cd ~/src

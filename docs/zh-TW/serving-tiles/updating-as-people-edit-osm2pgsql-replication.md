@@ -6,15 +6,15 @@ lang: zh-TW
 
 # 使用 osm2pgsql 隨開放街圖編輯同步更新你的資料庫
 
-每天都有數以百萬計的地圖更新；為了不讓地圖「過時」，可以定期更新用來產生地圖圖磚的資料。
+每日都有數以百萬計的地圖更新；為了不讓地圖「過時」，可以定期更新用來產生地圖圖磚的資料。
 
-用 osm2pgsql（1.4.2 或以上版本）來做，現在比以前容易得多。Ubuntu 22.04 內附 1.6.0 版，Debian 12 內附 1.8.0 版，也可以依照[這份說明](https://osm2pgsql.org/doc/install.html){: target=_blank}取得。osm2pgsql 附帶 [osm2pgsql-replication](https://osm2pgsql.org/doc/manual.html#updating-an-existing-database){: target=_blank}，提供相對簡單的方式讓資料庫保持最新。更有彈性的做法是直接呼叫 PyOsmium，作法請參考[這份教學](/serving-tiles/updating-as-people-edit-pyosmium.md)。
+自 osm2pgsql 1.4.2 起，更新資料庫相較以往已變得簡單許多。Ubuntu 22.04 與 Debian 12 分別內附 1.6.0 與 1.8.0 版，也可依照[這份說明](https://osm2pgsql.org/doc/install.html){: target=_blank}自行安裝。osm2pgsql 內附的 [osm2pgsql-replication](https://osm2pgsql.org/doc/manual.html#updating-an-existing-database){: target=_blank} 工具，能以相對簡單的方式讓資料庫保持最新；若需要更高的彈性，也可以直接呼叫 PyOsmium，詳見[這份教學](/serving-tiles/updating-as-people-edit-pyosmium.md)。
 
 你可以從許多不同的來源設定同步更新。開放街圖（OpenStreetMap）本身提供每分鐘、每小時與每日的更新，其他來源如 Geofabrik 則可提供每日更新，範圍對應 [download.geofabrik.de](http://download.geofabrik.de/index.html){: target=_blank} 上提供的區域節選。
 
 ## 使用 Geofabrik 資料的實作範例
 
-這個範例會從 Geofabrik 下載倫敦的資料，匯入資料庫，再設定更新。Geofabrik 的更新只涵蓋你下載的區域，每天提供一次。
+這個範例會從 Geofabrik 下載大倫敦（Greater London）的資料，匯入資料庫，再設定更新。Geofabrik 的更新只涵蓋你下載的區域，每日提供一次。
 
 首先，以你使用的非 root 帳號下載資料：
 
@@ -72,7 +72,7 @@ sudo -u _renderd \
 
 ### 建立套用更新的腳本
 
-接下來要建立寫入過期記錄檔的位置，以及用來套用待處理更新、讓受影響圖磚過期的腳本。圖磚過期時，可以選擇重新渲染、標記為髒圖磚（dirty），或直接刪除。
+接著建立存放過期記錄的資料夾，以及用來套用待處理更新、讓受影響圖磚過期的腳本。圖磚過期時，可以選擇重新渲染、標記為髒圖磚（dirty），或直接刪除。
 
 ```sh
 sudo mkdir /var/log/tiles
@@ -139,7 +139,7 @@ osm2pgsql-replication \
 
 請依你使用的帳號，把 `renderaccount` 改成實際位置。
 
-`osm2pgsql-replication update` 這行中 `--` 之後的所有內容都會當作參數傳給 osm2pgsql，必須與當初匯入資料庫時使用的參數一致。在 `--` 之前，`-d gis` 只是指定使用的資料庫，`--max-diff-size 10` 指定一次處理多少資料；不過要注意，osm2pgsql-replication 其實會反覆下載資料並更新資料庫，直到沒有資料要處理為止，可能要花一些時間。`--max diff-size` 決定每一輪擷取多少資料。`--post-processing /usr/local/sbin/expire_tiles.sh` 則只是呼叫我們另一個腳本。
+`osm2pgsql-replication update` 這行中 `--` 之後的所有內容都會當作參數傳給 osm2pgsql，必須與當初匯入資料庫時使用的參數一致。在 `--` 之前，`-d gis` 只是指定使用的資料庫，`--max-diff-size 10` 指定一次處理多少資料；不過要注意，osm2pgsql-replication 其實會反覆下載資料並更新資料庫，直到沒有資料要處理為止，可能要花一些時間。`--max-diff-size` 決定每一輪擷取多少資料。`--post-processing /usr/local/sbin/expire_tiles.sh` 則會呼叫另一個腳本。
 
 讓兩個腳本都可執行：
 
@@ -150,7 +150,7 @@ sudo chmod ugo+x /usr/local/sbin/expire_tiles.sh
 
 ### 確認可以看到除錯訊息
 
-這時能看到圖磚渲染程序的輸出會很有幫助，可以確認標記為髒的圖磚確實有在處理。近期的 mod_tile 版本預設關閉這項功能，開啟方式如下：
+此時最好能看到圖磚渲染程序的輸出，以確認標記為髒的圖磚確實有在處理。近期的 mod_tile 版本預設關閉這項功能，開啟方式如下：
 
 ```sh
 sudo nano /usr/lib/systemd/system/renderd.service
@@ -192,7 +192,7 @@ sudo journalctl -ef
 sudo -u _renderd /usr/local/sbin/update_tiles.sh
 ```
 
-如果沒有待處理的更新（這些檔案的 Geofabrik 更新每天發布一次），會顯示類似以下內容：
+如果沒有待處理的更新（這些檔案的 Geofabrik 更新每日發布一次），會顯示類似以下內容：
 
 ```log
 2023-07-02 16:57:03 [INFO]: Using replication service 'http://download.geofabrik.de/europe/britain-and-ireland-updates'. Current sequence 3743 (2023-07-01 20:21:30+00:00).
@@ -266,7 +266,7 @@ Jun  5 16:36:58 ubuntuvm75 renderd[5838]: Failed to read cmd on fd 5
 Jun  5 16:36:58 ubuntuvm75 renderd[5838]: Connection 0, fd 5 closed, now 0 left, total slots 1
 ```
 
-### 每天執行
+### 每日執行
 
 執行更新的腳本可以加入 root 的 crontab。首先修改 `update_tiles.sh`，讓它啟動時做些錯誤檢查，並只把摘要附加到記錄檔。你可以從[這裡](https://github.com/SomeoneElseOSM/mod_tile/blob/switch2osm/update_tiles.sh){: target=_blank}取得 `pgsql` 版本，或從[這裡](https://github.com/SomeoneElseOSM/mod_tile/blob/switch2osm/update_tiles_flex.sh){: target=_blank}取得 `flex` 版本（如上所述，兩者的 `osm2pgsql` 參數不同）。同樣請把「renderaccount」改成你在這裡使用的非 root 帳號名稱。你也可以調整執行緒數量與記憶體快取用量。
 
@@ -276,7 +276,7 @@ Jun  5 16:36:58 ubuntuvm75 renderd[5838]: Connection 0, fd 5 closed, now 0 left,
 04 09  *   *   *     /usr/local/sbin/update_tiles.sh >> /var/log/tiles/run.log
 ```
 
-這個範例會在每天早上 09:04 執行一次。由於 Geofabrik 的更新每天只發布一次，一天執行超過一次並沒有意義。
+這個範例會在每日早上 09:04 執行一次。由於 Geofabrik 的更新每日只發布一次，一天執行超過一次並沒有意義。
 
 ## 使用 openstreetmap.org 的每分鐘更新
 
@@ -315,7 +315,7 @@ sudo -u _renderd \
 sudo -u _renderd /usr/local/sbin/update_tiles.sh
 ```
 
-再次提醒，「osm2pgsql-replication」其實會反覆下載資料並更新資料庫，直到沒有資料要處理為止，而腳本中的 `--max diff-size` 決定每一輪擷取多少資料。最後完成時，結尾類似：
+再次提醒，「osm2pgsql-replication」其實會反覆下載資料並更新資料庫，直到沒有資料要處理為止，而腳本中的 `--max-diff-size` 決定每一輪擷取多少資料。最後完成時，結尾類似：
 
 ```log
 2022-06-05 22:30:47 [INFO]: Data imported until 2022-06-05 21:45:42+00:00. Backlog remaining: 0:45:05.948787
