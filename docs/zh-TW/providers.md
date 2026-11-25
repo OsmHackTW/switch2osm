@@ -41,7 +41,9 @@ lang: zh-TW
 * [Jawg](https://www.jawg.io/){: target=_blank}，法國
 * [LatLng](https://www.latlng.work/){: target=_blank}，美國
 * [Mapbox](http://mapbox.com/){: target=_blank}，美國
+* [MapLark](https://maplark.com/){: target=_blank}，瑞典
 * [MapTiler](https://www.maptiler.com/){: target=_blank}，瑞士
+* [Maps by DeltaBreen](https://maps.deltabreen.eu/){: target=_blank}，愛爾蘭
 * [MapTiles API](https://www.maptilesapi.com/){: target=_blank}，美國
 * [Maptoolkit](https://www.maptoolkit.com/){: target=_blank}，德國／奧地利
 * [Nextzen](https://www.nextzen.org/){: target=_blank}，美國
