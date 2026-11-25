@@ -9,13 +9,13 @@ lang: zh-TW
 # {{ title }}
 
 !!! info ""
-    本頁說明如何安裝與設定執行自有圖磚伺服器所需的全部軟體。本教學針對 [Ubuntu Linux](https://ubuntu.com/){: target=_blank} 20.04 LTS（Focal Fossa）撰寫，並於 2020 年 5 月測試。
+    本頁說明如何安裝與設定執行自有圖磚伺服器所需的全部軟體。本教學針對 [Ubuntu Linux](https://ubuntu.com/){: target=_blank} 20.04 LTS（Focal Fossa）撰寫，並於 2020 年 5 月實測。
 
 ## 軟體安裝
 
 OSM 圖磚伺服器堆疊（Stack）是一組相互搭配、共同組成圖磚伺服器的程式與函式庫。如同開放街圖的眾多面向，要達成這個目標有很多方法，而且幾乎每個元件都有各具優缺點的替代方案。本教學介紹的是最標準的版本，與 OpenStreetMap.org 主要圖磚伺服器所使用的架構相近。
 
-這套堆疊由 5 個主要元件組成：`mod_tile`、`renderd`、`mapnik`、`osm2pgsql` 以及 `postgresql/postgis` 資料庫。Mod_tile 是 Apache 模組，負責提供已快取的圖磚，並判斷哪些圖磚需要重新渲染，原因可能是尚未快取，或是已經過時。Renderd 為不同類型的請求提供優先佇列系統，用來管理並分散渲染請求帶來的負載。Mapnik 則是實際負責渲染的軟體函式庫，供 renderd 呼叫。
+這套堆疊由 5 個主要元件組成：`mod_tile`、`renderd`、`mapnik`、`osm2pgsql` 以及 `postgresql/postgis` 資料庫。`mod_tile` 是 Apache 模組，負責提供已快取的圖磚，並判斷哪些圖磚需要重新渲染，原因可能是尚未快取，或是已經過期。`renderd` 為不同類型的請求提供優先佇列系統，用來管理並分散渲染請求帶來的負載。Mapnik 則是實際負責渲染的軟體函式庫，供 renderd 呼叫。
 
 本教學是在全新安裝的 {{ dist }} 伺服器上撰寫並測試。如果你已經安裝了某些軟體的其他版本（例如從舊版升級，或另外設定了 PPA 來源），可能需要自行做些調整。
 
@@ -71,31 +71,31 @@ psql
 \c gis
 ```
 
-（會回應「You are now connected to database 'gis' as user 'postgres'」。）
+（會顯示「You are now connected to database 'gis' as user 'postgres'」。）
 
 ```sql
 CREATE EXTENSION postgis;
 ```
 
-（會回應 CREATE EXTENSION）
+（會顯示 CREATE EXTENSION）
 
 ```sql
 CREATE EXTENSION hstore;
 ```
 
-（會回應 CREATE EXTENSION）
+（會顯示 CREATE EXTENSION）
 
 ```sql
 ALTER TABLE geometry_columns OWNER TO renderaccount;
 ```
 
-（會回應 ALTER TABLE）
+（會顯示 ALTER TABLE）
 
 ```sql
 ALTER TABLE spatial_ref_sys OWNER TO renderaccount;
 ```
 
-（會回應 ALTER TABLE）
+（會顯示 ALTER TABLE）
 
 ```sh
 \q
@@ -142,7 +142,7 @@ python3
 >>>
 ```
 
-如果出現第二個 `>>>` 提示字元且沒有錯誤，就表示 Python 找得到 Mapnik 函式庫。恭喜！用以下指令即可離開 Python：
+如果出現第二個 `>>>` 提示字元且沒有錯誤，就表示 Python 找得到 Mapnik 函式庫。恭喜你，你已經學會了架設圖磚伺服器！用以下指令即可離開 Python：
 
 ```py
 >>> quit()
@@ -236,7 +236,7 @@ carto project.mml > mapnik.xml
 
 一開始先只匯入少量測試資料。可以下載的地方很多，其中 `download.geofabrik.de` 的選擇相當豐富。這個範例會下載亞塞拜然（Azerbaijan）的資料，目前大約 32Mb。
 
-瀏覽 <https://download.geofabrik.de/asia/azerbaijan.html>{: target=_blank}，記下「This file was last modified」的日期（例如「{{ dl_timestamp }}」）。之後要將資料庫更新至最新的 OSM 編輯內容時，會用到這個日期。下載方式如下：
+前往 <https://download.geofabrik.de/asia/azerbaijan.html>{: target=_blank}，記下「This file was last modified」的日期（例如「{{ dl_timestamp }}」）。之後要將資料庫更新至最新的 OSM 編輯內容時，會用到這個日期。下載方式如下：
 
 ```sh
 mkdir ~/data
@@ -410,7 +410,7 @@ sudo service apache2 reload
 
 （筆者以為，之所以需要兩次，想必是 Apache 被熱改設定而「困惑」罷。譯者：也許只是過於疲憊罷。２回啊２回！（便乗））
 
-用網頁瀏覽器開啟 `http://your.server.ip.address/index.html`，應該會看到 Ubuntu / Apache 的「It works!」頁面。
+在瀏覽器中開啟 `http://your.server.ip.address/index.html`，你應該會看到 Ubuntu / Apache 的「It works!」頁面。
 
 !!! tip
     如果不知道伺服器分配到哪個 IP 位址，通常可以用 `ifconfig` 查詢；網路設定不太複雜時，就是 `127.0.0.1` 以外的那個 `inet addr`。
@@ -429,7 +429,7 @@ renderd -f -c /usr/local/etc/renderd.conf
 
 這時可能會看到一些警告，暫時不用理會，但不應該出現任何錯誤。如果有錯誤，請把完整輸出貼到 Pastebin，然後到 [`community.openstreetmap.org`](https://community.openstreetmap.org){: target=_blank} 之類的地方提問（附上 Pastebin 連結，不要把全部文字貼在問題裡）。
 
-用網頁瀏覽器開啟：`http://your.server.ip.address/hot/0/0/0.png`
+在瀏覽器中開啟：`http://your.server.ip.address/hot/0/0/0.png`
 
 瀏覽器中應該會出現一張世界地圖，指令列上也會出現更多除錯訊息，包括「DEBUG: START TILE」和「DEBUG: DONE TILE」。「DEBUG: Failed to read cmd on fd」訊息可以忽略，那不是錯誤。如果沒有出現圖磚，又出現其他錯誤，請把完整輸出貼到 Pastebin，然後到 [`community.openstreetmap.org`](https://community.openstreetmap.org){: target=_blank} 之類的地方提問。
 
@@ -452,7 +452,7 @@ sudo cp ~/src/mod_tile/debian/renderd.service /lib/systemd/system/
 sudo /etc/init.d/renderd start
 ```
 
-（應該會回應「[ ok ] Starting renderd (via systemctl): renderd.service」。）
+（應該會顯示「[ ok ] Starting renderd (via systemctl): renderd.service」。）
 
 設定成每次開機自動啟動：
 
@@ -476,4 +476,4 @@ tail -f /var/log/syslog | grep " TILE "
 
 載入頁面時應該會看到一些圖磚請求。逐步縮小地圖時，ssh 連線中會出現新圖磚的請求。有些低縮放等級的圖磚第一次渲染可能要花很久（好幾分鐘），但完成後下次就能直接使用。
 
-恭喜！接著到[使用圖磚](/using-tiles/index.md)一節，用新架好的圖磚伺服器做出一張地圖。
+恭喜你，你已經學會了架設圖磚伺服器！接著到[使用圖磚](/using-tiles/index.md)一節，用新架好的圖磚伺服器做出一張地圖。

@@ -9,13 +9,13 @@ lang: zh-TW
 # {{ title }}
 
 !!! info ""
-    本頁說明如何安裝與設定執行自有圖磚伺服器所需的全部軟體。本教學針對 [Debian Linux](https://www.debian.org/){: target=_blank} 13（trixie）搭配 OSM Carto v6.0.0 撰寫，並於 2026 年 6 月測試。
+    本頁說明如何安裝與設定執行自有圖磚伺服器所需的全部軟體。本教學針對 [Debian Linux](https://www.debian.org/){: target=_blank} 13（trixie）搭配 OSM Carto v6.0.0 撰寫，並於 2026 年 6 月實測。
 
 ## 軟體安裝
 
 OSM 圖磚伺服器堆疊（Stack）是一組彼此協作、共同組成圖磚伺服器的程式與函式庫。如同開放街圖的眾多面向，要達成這個目標有很多方法，幾乎每個元件都有各具優缺點的替代方案。本教學介紹的是最標準的版本，與 OpenStreetMap.org 主要圖磚伺服器所用的架構相近。
 
-這套堆疊由 5 個主要元件組成：`mod_tile`、`renderd`、`mapnik`、`osm2pgsql` 以及 `postgresql/postgis` 資料庫。Mod_tile 是 Apache 模組，負責提供已快取的圖磚，並判斷哪些圖磚需要重新渲染，原因可能是尚未快取，或是已經過時。Renderd 為不同類型的請求提供優先佇列系統，用來管理並分散渲染請求帶來的負載。Mapnik 則是實際負責渲染的軟體函式庫，供 `renderd` 呼叫。
+這套堆疊由 5 個主要元件組成：`mod_tile`、`renderd`、`mapnik`、`osm2pgsql` 以及 `postgresql/postgis` 資料庫。`mod_tile` 是 Apache 模組，負責提供已快取的圖磚，並判斷哪些圖磚需要重新渲染，原因可能是尚未快取，或是已經過期。`renderd` 為不同類型的請求提供優先佇列系統，用來管理並分散渲染請求帶來的負載。Mapnik 則是實際負責渲染的軟體函式庫，供 `renderd` 呼叫。
 
 本教學是在全新的 {{ dist }} 伺服器上撰寫與測試。如果你已安裝某些軟體的其他版本（例如從舊版升級，或另外設定了 PPA 來源），可能需要做些調整。
 
@@ -64,19 +64,19 @@ psql
 \c gis
 ```
 
-（會回應「You are now connected to database 'gis' as user 'postgres'」。）
+（會顯示「You are now connected to database 'gis' as user 'postgres'」。）
 
 ```sql
 CREATE EXTENSION postgis;
 ```
 
-（會回應 CREATE EXTENSION）
+（會顯示 CREATE EXTENSION）
 
 ```sql
 CREATE EXTENSION hstore;
 ```
 
-（會回應 CREATE EXTENSION）
+（會顯示 CREATE EXTENSION）
 
 ```sh
 \q
@@ -148,7 +148,7 @@ carto project.mml > mapnik.xml
 
 一開始先只匯入少量測試資料。可以下載的地方很多，其中 `download.geofabrik.de` 的選擇相當豐富。這個範例會下載亞塞拜然（Azerbaijan）的資料，目前大約 32Mb。
 
-瀏覽 <https://download.geofabrik.de/asia/azerbaijan.html>{: target=_blank}，記下「This file was last modified」的日期（例如「{{ dl_timestamp }}」）。之後要將資料庫更新至最新的 OSM 編輯內容時，會用到這個日期。下載方式如下：
+前往 <https://download.geofabrik.de/asia/azerbaijan.html>{: target=_blank}，記下「This file was last modified」的日期（例如「{{ dl_timestamp }}」）。之後要將資料庫更新至最新的 OSM 編輯內容時，會用到這個日期。下載方式如下：
 
 ```sh
 mkdir ~/data
@@ -246,7 +246,7 @@ sudo chown _renderd data
 sudo -u _renderd scripts/get-external-data.py
 ```
 
-此步驟需下載大量資料，可能要花一段時間，期間畫面上不會有太多訊息。有些資料會直接寫入資料庫，有些則會存放到「openstreetmap-carto」下的「data」資料夾。如果這一步出錯，可能是 Natural Earth 資料的下載位置出現變動，詳情請參考[這個 issue](https://github.com/nvkelso/natural-earth-vector/issues/581#issuecomment-913988101){: target=_blank} 以及 Natural Earth 上的類似 issue。如果需要更改 Natural Earth 的下載位置，請修改本機上的 [`external-data.yml`](https://github.com/gravitystorm/openstreetmap-carto/blob/master/external-data.yml){: target=_blank}。
+此步驟需下載大量資料，可能要花一段時間，期間畫面上不會有太多訊息。有些資料會直接寫入資料庫，有些則會存放到「openstreetmap-carto」下的「data」資料夾。如果這一步出錯，可能是 Natural Earth 資料的下載位置出現變動，詳情請參考[這個 issue](https://github.com/nvkelso/natural-earth-vector/issues/581#issuecomment-913988101){: target=_blank} 以及 Natural Earth 上的類似 issue。如需變更 Natural Earth 的下載位置，請修改本機上的 [`external-data.yml`](https://github.com/gravitystorm/openstreetmap-carto/blob/master/external-data.yml){: target=_blank}。
 
 ### 字型
 
@@ -318,7 +318,7 @@ sudo systemctl reload apache2
 
 ### 確認可以看到除錯訊息
 
-此時最好能看到圖磚渲染程序的輸出（包括任何錯誤）。近期的 `mod_tile` 版本預設關閉這項功能，開啟方式如下：
+為方便觀察渲染過程與錯誤，我們建議開啟除錯訊息，但近期版本的 `mod_tile` 預設關閉此功能。請依下列步驟開啟：
 
 ```sh
 sudo nano /usr/lib/systemd/system/renderd.service
@@ -371,7 +371,7 @@ sudo /etc/init.d/apache2 restart
 
 如果沒有出現，可能表示 mod_tile 的設定檔 `/etc/apache2/conf-available/renderd.conf` 沒有正確設定或啟用，請回頭檢查上方的 `wget` 步驟。
 
-接著用瀏覽器開啟 `http://yourserveripaddress/index.html`（把 `yourserveripaddress` 換成伺服器的實際位址）。應該會看到「Apache2 Debian Default Page」。
+接著，在瀏覽器中開啟 `http://yourserveripaddress/index.html`（將 `yourserveripaddress` 換成伺服器的實際位址），你應該會看到「Apache2 Debian Default Page」。
 
 !!! tip
     如果不知道伺服器分配到哪個 IP 位址，通常可以用 `ip address` 查詢。網路設定不太複雜時，就是 `127.0.0.1` 以外的那個 `inet addr`。
@@ -380,7 +380,7 @@ sudo /etc/init.d/apache2 restart
 
 請注意，上述流程只完成 `http`（連接埠 80）網站的設定。如要啟用 `https`，還需額外設定 Apache（本文不另贅述）；若使用「Let's Encrypt」申請憑證，可一併完成 HTTPS 設定。
 
-接著用瀏覽器開啟：`http://yourserveripaddress/hot/0/0/0.png`
+接著，在瀏覽器中開啟：`http://yourserveripaddress/hot/0/0/0.png`
 
 若先前修改過 `URI=/hot/`，這裡也要跟著改。你應該會看到一張小小的世界地圖。如果沒有，請檢查顯示的錯誤訊息。常見原因是權限問題，或不小心漏掉了上面某些步驟。如果還是拿不到圖磚並出現其他錯誤，請把完整輸出貼到 Pastebin，然後到 [`community.openstreetmap.org`](https://community.openstreetmap.org){: target=_blank} 之類的地方提問。
 
@@ -394,10 +394,10 @@ sudo wget https://raw.githubusercontent.com/SomeoneElseOSM/mod_tile/switch2osm/e
 sudo nano sample_leaflet.html
 ```
 
-編輯檔案，把 IP 位址從 `127.0.0.1` 改成 `your.server.address`，讓其他電腦也能存取這台伺服器。然後瀏覽 `http://your.server.address/sample_leaflet.html`。
+編輯檔案，把 IP 位址從 `127.0.0.1` 改成 `your.server.address`，讓其他電腦也能存取這台伺服器。然後開啟 `http://your.server.address/sample_leaflet.html`。
 
 第一次顯示地圖需要一點時間。你可以放大縮小，但依伺服器速度不同，有些圖磚一開始可能會因為來不及渲染而呈現灰色。不過渲染完成後，下次就能直接使用。系統日誌中應可看到圖磚請求。
 
-如果需要，可以把 `/etc/apache2/conf-available/renderd.conf` 中的 `ModTileMissingRequestTimeout` 從 10 秒調高到 60 秒甚至更久，延長系統回傳灰色圖磚前等待背景渲染的時間（適用於沒有舊圖磚可用時）。修改後記得執行 `#!sh sudo service renderd restart` 和 `#!sh sudo service apache2 restart`。也不妨實際測量調整其他參數的效果。
+如有需要，可以把 `/etc/apache2/conf-available/renderd.conf` 中的 `ModTileMissingRequestTimeout` 從 10 秒調高到 60 秒甚至更久，延長系統回傳灰色圖磚前等待背景渲染的時間（適用於沒有舊圖磚可用時）。修改後記得執行 `#!sh sudo service renderd restart` 和 `#!sh sudo service apache2 restart`。也不妨實際測量調整其他參數的效果。
 
-恭喜！接著到[使用圖磚](/using-tiles/index.md)一節，用新架好的圖磚伺服器做出一張地圖。
+恭喜你，你已經學會了架設圖磚伺服器！接著到[使用圖磚](/using-tiles/index.md)一節，用新架好的圖磚伺服器做出一張地圖。
